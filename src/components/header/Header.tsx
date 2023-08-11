@@ -12,6 +12,7 @@ import { HomeCatIcon } from "../icons/CatsIcon";
 import { useContext } from "react";
 import { AuthentificationContext } from "../../context/AuthentificationContext";
 import { useNavigate } from "react-router-dom";
+import HeadBand from "./Headband";
 
 const HeaderProvider = () => {
   const currentUser = useContext(AuthentificationContext);
@@ -77,21 +78,22 @@ const HeaderProvider = () => {
     }
   }
 
-  const Menu = () => {
+  const MenuNavigate = () => {
     return (
-      <div>
-        <header id="app-header" className="header">
-          <Menu
-            mode="horizontal"
-            items={currentUser.isConnected ? itemsConnected : itemsNotConnected}
-            onClick={onChangeMenu}
-          />
-        </header>
-      </div>
+      <Menu
+        mode="horizontal"
+        items={currentUser.isConnected ? itemsConnected : itemsNotConnected}
+        onClick={onChangeMenu}
+      />
     );
   };
 
-  return <Menu />;
+  return (
+    <header id="app-header" className="header">
+      <HeadBand />
+      <MenuNavigate />
+    </header>
+  );
 };
 
 export { HeaderProvider };
