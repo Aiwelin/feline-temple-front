@@ -1,19 +1,15 @@
 import { useState, useEffect } from "react";
-import { DOMAIN } from "./URL";
-import users from './json/users'
+import users from "./json/Users";
 
-async function FetchAPI() {
-    const [data, setData] = useState({});
+async function FetchUsers() {
+  const [data, setData] = useState({});
 
+  //Get Method
+  const apiGet = () => {
+    console.log(users);
+  };
 
-    //Get Method
-    const apiGet = () => {
-        console.log(users)
-    };
-
-    return (
-        <div>My API</div>
-    );
+  return <div>My API</div>;
 }
 
-export default FetchAPI;
+export default FetchUsers;
