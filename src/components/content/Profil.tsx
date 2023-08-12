@@ -11,12 +11,16 @@ export default class Profil extends React.Component<UserInterface, {}> {
     return (
       <div id="form-profil">
         <div id="form-name-profil">
-          if(this.props.avatar)
-          {<img key={this.props.avatar} src={this.props.avatar} />} else{" "}
+          {this.props.avatar ? (
+            <img key={this.props.avatar} src={this.props.avatar} />
+          ) : (
+            " "
+          )}
           {<Avatar size={64} icon={<UserOutlined />} />}
           <p>
-            `{this.props.name} {this.props.lastName}`
+            {this.props.name} {this.props.lastName}
           </p>
+          <p>{this.props.address}</p>
         </div>
       </div>
     );

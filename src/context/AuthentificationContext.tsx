@@ -1,18 +1,18 @@
 import * as React from "react";
 const AuthentificationContext = React.createContext({
-  lastName: null,
-  name: null,
-  avatar: null,
-  address: null,
+  lastName: "",
+  name: "",
+  avatar: "",
+  address: "",
   isConnected: false,
 });
 
-const AuthentificationContextProvider = ({ children }) => {
+const AuthentificationContextProvider = ({ children }: any) => {
   const [currentUser, setCurrentUser] = React.useState({
-    lastName: "test",
-    name: "test",
-    avatar: "/test",
-    address: "test",
+    lastName: "PICHARD",
+    name: "Amandine",
+    avatar: "../assets/avatar/apichard.jpg",
+    address: "18 RUE MAGDALINE, 44700 NANTES",
   });
   const userContextValue = React.useMemo(
     () => ({

@@ -8,7 +8,7 @@ import {
   LogoutOutlined,
   ProfileOutlined,
 } from "@ant-design/icons";
-import { HomeCatIcon } from "../icons/CatsIcon";
+//import { HomeCatIcon } from "../icons/CatsIcon";
 import { useContext } from "react";
 import { AuthentificationContext } from "../../context/AuthentificationContext";
 import { useNavigate } from "react-router-dom";
@@ -23,7 +23,8 @@ const HeaderProvider = () => {
     {
       label: "Accueil",
       key: "accueil",
-      icon: <HomeCatIcon style={{ color: "hotpink" }} />,
+      icon: <HomeOutlined />,
+      // icon: <HomeCatIcon style={{ color: "hotpink" }} />,
     },
     {
       label: "Mes réservations",
@@ -68,7 +69,7 @@ const HeaderProvider = () => {
     },
   ];
 
-  function onChangeMenu(menu) {
+  function onChangeMenu(menu: any) {
     console.log(menu.key);
     if (menu.key === "deconnexion") {
       currentUser.isConnected = false;

@@ -12,18 +12,20 @@ import Content from "./components/content/Content";
 
 let root = document.getElementById("root");
 
-createRoot(root).render(
-  <React.StrictMode>
-    <ConfigProvider locale={frFR}>
-      <div className="App">
-        <AuthentificationContextProvider>
-          <BrowserRouter>
-            <HeaderProvider />
-            <Content />
-          </BrowserRouter>
-          <Footer />
-        </AuthentificationContextProvider>
-      </div>
-    </ConfigProvider>
-  </React.StrictMode>
-);
+if (root) {
+  createRoot(root).render(
+    <React.StrictMode>
+      <ConfigProvider locale={frFR}>
+        <div className="App">
+          <AuthentificationContextProvider>
+            <BrowserRouter>
+              <HeaderProvider />
+              <Content />
+            </BrowserRouter>
+            <Footer />
+          </AuthentificationContextProvider>
+        </div>
+      </ConfigProvider>
+    </React.StrictMode>
+  );
+}
