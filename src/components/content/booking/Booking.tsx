@@ -1,5 +1,5 @@
 import { DatePicker } from "antd";
-import CalendarBooking from "./CalendarBooking";
+import CalendarBooking from "./calendar/CalendarBooking";
 
 const Booking = () => {
   const { RangePicker } = DatePicker;
@@ -8,7 +8,7 @@ const Booking = () => {
       <div id="booking-rangepicker">
         Veuillez sélectionner une plage de date : <RangePicker />
       </div>
-      <CalendarBooking />;
+      <CalendarBooking />
     </div>
   );
 };

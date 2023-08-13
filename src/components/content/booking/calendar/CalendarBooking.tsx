@@ -4,7 +4,7 @@ import type { CalendarMode } from "antd/es/calendar/generateCalendar";
 import { Alert, Calendar } from "antd";
 import { useState } from "react";
 import * as dayjs from "dayjs";
-import CellBooking from "./CellBooking";
+import CellBooking from "../cell/CellBooking";
 
 const CalendarBooking = () => {
   const [selectedValue, setSelectedValue] = useState(() =>
@@ -44,7 +44,6 @@ const CalendarBooking = () => {
         cellRender={cellRender}
         disabledDate={disabledDate}
       />
-      ;
     </div>
   );
 };

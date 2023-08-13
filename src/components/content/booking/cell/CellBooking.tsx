@@ -1,12 +1,12 @@
 import type { Dayjs } from "dayjs";
-import PopConfirmBooking from "./PopConfirmSelectedBooking";
+import PopoverSelectBooking from "../popover/PopoverSelectBooking";
 
 type Props = {
   value: Dayjs;
 };
 
 const CellBooking = (props: Props) => {
-  return <PopConfirmBooking value={props.value} />;
+  return <PopoverSelectBooking value={props.value} />;
 };
 
 export default CellBooking;
