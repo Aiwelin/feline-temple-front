@@ -1,14 +1,10 @@
-import type { Dayjs } from "dayjs";
 import type { BadgeProps } from "antd";
 import { Badge, Popover } from "antd";
 import getDatasByBooking from "../../../../api/DatasBooking";
 import LinkCatSitter from "../link/LinkCatSitter";
+import { DayJsType } from "../type/DayJsType";
 
-type Props = {
-  value: Dayjs;
-};
-
-const PopoverSelectBooking = (props: Props) => {
+const PopoverSelectBooking = (props: DayJsType) => {
   const booking = getDatasByBooking(props.value);
   const catSitters = booking.catSitters;
   return booking.type === "success" ? (

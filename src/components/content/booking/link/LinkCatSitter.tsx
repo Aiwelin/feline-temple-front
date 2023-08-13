@@ -1,17 +1,8 @@
-import type { Dayjs } from "dayjs";
+import "./LinkCatSitter.css";
 import { Link } from "react-router-dom";
+import { BookingCatSitterType } from "../type/BookingCatSitterType";
 
-type PropsCatSitter = {
-  name: string;
-  id: number;
-};
-
-type Props = {
-  listCatSitter: PropsCatSitter[];
-  value: Dayjs;
-};
-
-const LinkCatSitter = (props: Props) => {
+const LinkCatSitter = (props: BookingCatSitterType) => {
   return (
     <div id="booking-catsitters" className="link-booking-catsitters">
       <ul>
@@ -19,7 +10,7 @@ const LinkCatSitter = (props: Props) => {
           props.listCatSitter.map((catSitter) => (
             <li>
               <Link
-                to={`/reserver/${catSitter.id}?Date=${props.value?.format(
+                to={`/reserver/${catSitter.id}?date=${props.value?.format(
                   "DD-MM-YYYY"
                 )}`}
               >

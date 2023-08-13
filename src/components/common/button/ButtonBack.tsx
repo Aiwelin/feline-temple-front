@@ -1,13 +1,15 @@
-import { useNavigate } from "react-router-dom";
 import { Button } from "antd";
-import { TitleType } from "../type/TitleType";
+import { useNavigate } from "react-router-dom";
+import { StepBackwardOutlined } from "@ant-design/icons";
 
-const ButtonBack = (title: TitleType) => {
+const ButtonBack = ({ prop }: any) => {
   const navigate = useNavigate();
   return (
-    <Button onClick={() => navigate(-1)}>
-      {title ? title : "Revenir en arrière"}
-    </Button>
+    <div id="back" className="button-back">
+      <Button onClick={() => navigate(-1)}>
+        <StepBackwardOutlined /> {prop ? prop : "Revenir en arrière"}
+      </Button>
+    </div>
   );
 };
 

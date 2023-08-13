@@ -14,7 +14,7 @@ import { AuthentificationContext } from "../../context/AuthentificationContext";
 import { useNavigate } from "react-router-dom";
 import HeadBand from "./Headband";
 
-const HeaderProvider = () => {
+const Header = () => {
   const currentUser = useContext(AuthentificationContext);
 
   const navigate = useNavigate();
@@ -97,4 +97,4 @@ const HeaderProvider = () => {
   );
 };
 
-export { HeaderProvider };
+export { Header };
