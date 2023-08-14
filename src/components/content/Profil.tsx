@@ -1,10 +1,10 @@
 import * as React from "react";
-import UserInterface from "../../UserInterface";
+import { User } from "../../UserInterface";
 import { UserOutlined } from "@ant-design/icons";
 import { Avatar, Space } from "antd";
 
-export default class Profil extends React.Component<UserInterface, {}> {
-  constructor(props: UserInterface) {
+export default class Profil extends React.Component<User, {}> {
+  constructor(props: User) {
     super(props);
   }
   render() {

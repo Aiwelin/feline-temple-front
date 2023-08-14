@@ -2,10 +2,12 @@ import { Button, message } from "antd";
 import { useState, useContext } from "react";
 import { PoweroffOutlined } from "@ant-design/icons";
 import { useLocation, useParams } from "react-router-dom";
-import ButtonBack from "../../../common/button/ButtonBack";
 import { BookingCatSitterContext } from "../../../../context/BookingCatSitterContext";
+import ButtonBack from "../../../common/button/ButtonBack";
+import getDatasUsers from "../../../../api/DatasUsers";
 
 const FormSelectedBooking = () => {
+  const users = getDatasUsers();
   const bookingContext = useContext(BookingCatSitterContext);
   const [currentBooking, setCurrentBooking] = useState({});
   const [loadings, setLoadings] = useState<boolean[]>([]);
@@ -44,10 +46,14 @@ const FormSelectedBooking = () => {
   return (
     <div id="booking-selected" className="form-selected-booking">
       {<ButtonBack title="Revenir aux réservations" />}
-      {params.catsitterid}
-      {location.search}
-      {location.pathname}
-      {dateQueryParam}
+      <div id="booking-selected-name" className="form-selected-booking-name">
+        {users.find((user) => user.id === Number(params.catsitterid))?.name}
+        &nbsp;
+        {users.find((user) => user.id === Number(params.catsitterid))?.lastName}
+      </div>
+      <div id="booking-selected-date" className="form-selected-booking-date">
+        Date de la réservation : {dateQueryParam}
+      </div>
       {
         <Button
           type="primary"

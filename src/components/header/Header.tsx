@@ -1,3 +1,4 @@
+import "./Header.css";
 import { Menu, MenuProps } from "antd";
 import {
   HomeOutlined,
@@ -12,7 +13,6 @@ import {
 import { useContext } from "react";
 import { AuthentificationContext } from "../../context/AuthentificationContext";
 import { useNavigate } from "react-router-dom";
-import HeadBand from "./Headband";
 
 const Header = () => {
   const currentUser = useContext(AuthentificationContext);
@@ -70,7 +70,6 @@ const Header = () => {
   ];
 
   function onChangeMenu(menu: any) {
-    console.log(menu.key);
     if (menu.key === "deconnexion") {
       currentUser.isConnected = false;
       navigate("/");
@@ -91,7 +90,6 @@ const Header = () => {
 
   return (
     <header id="app-header" className="header">
-      <HeadBand />
       <MenuNavigate />
     </header>
   );

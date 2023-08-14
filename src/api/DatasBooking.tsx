@@ -6,27 +6,27 @@ const getDatasByBooking = (value: Dayjs) => {
     return [
       {
         dateBooking: dayjs().add(1, "day"),
-        catSitter: { name: "Amandine PICHARD", id: 1 },
+        id: 1,
       },
       {
         dateBooking: dayjs().add(1, "day"),
-        catSitter: { name: "Le temple félidé", id: 2 },
+        id: 2,
       },
       {
         dateBooking: dayjs().add(1, "day"),
-        catSitter: { name: "Maximus Clavus", id: 3 },
+        id: 3,
       },
       {
         dateBooking: dayjs().add(7, "day"),
-        catSitter: { name: "Amandine PICHARD", id: 1 },
+        id: 1,
       },
       {
         dateBooking: dayjs().add(7, "day"),
-        catSitter: { name: "Le temple félidé", id: 2 },
+        id: 2,
       },
       {
         dateBooking: dayjs().add(9, "day"),
-        catSitter: { name: "Maximus Clavus", id: 3 },
+        id: 3,
       },
     ];
   };
@@ -37,9 +37,7 @@ const getDatasByBooking = (value: Dayjs) => {
   ).length;
   const catSitters = listData
     .filter((data) => value.isSame(data.dateBooking, "day"))
-    .map((data) => data.catSitter);
-  console.log(nbBooking);
-  console.log(catSitters);
+    .map((data) => data.id);
 
   const booking = nbBooking
     ? {
@@ -47,7 +45,7 @@ const getDatasByBooking = (value: Dayjs) => {
         content: `${nbBooking} disponibles.`,
         catSitters: catSitters,
       }
-    : { type: "error", content: "Aucun créneau disponible." };
+    : { type: "error", content: "" };
 
   return booking;
 };

@@ -1,3 +1,4 @@
+import "./Content.css";
 import { useContext } from "react";
 import { Route, Routes } from "react-router-dom";
 import { AuthentificationContext } from "../../context/AuthentificationContext";
@@ -11,7 +12,7 @@ const Content = () => {
   const currentUser = useContext(AuthentificationContext);
 
   return (
-    <div id="app-containter">
+    <div id="app-content" className="content">
       <Routes>
         <Route path="/" element={<Booking />}></Route>
         <Route path="/accueil" element={<Booking />}></Route>

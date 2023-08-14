@@ -1,39 +1,55 @@
 import * as React from "react";
+import getDatasUsers from "../api/DatasUsers";
+
 const AuthentificationContext = React.createContext({
-  lastName: "",
-  name: "",
+  id: 0,
   avatar: "",
+  name: "",
+  lastName: "",
+  birthdate: "",
   address: "",
+  email: "",
+  nbCats: 0,
+  catSitter: false,
   isConnected: false,
 });
 
 const AuthentificationContextProvider = ({ children }: any) => {
-  const [currentUser, setCurrentUser] = React.useState({
-    lastName: "PICHARD",
-    name: "Amandine",
-    avatar: "../assets/avatar/apichard.jpg",
-    address: "18 RUE MAGDALINE, 44700 NANTES",
-  });
-  const userContextValue = React.useMemo(
-    () => ({
-      name: currentUser.name,
-      lastName: currentUser.lastName,
-      avatar: currentUser.avatar,
-      address: currentUser.address,
-      isConnected: true,
-    }),
-    [
-      currentUser.name,
-      currentUser.lastName,
-      currentUser.avatar,
-      currentUser.address,
-    ]
-  );
-  return (
-    <AuthentificationContext.Provider value={userContextValue}>
-      {children}
-    </AuthentificationContext.Provider>
-  );
+  const users = getDatasUsers();
+  const user = users.find((user) => user.id === 1);
+  if (user) {
+    const [currentUser, setCurrentUser] = React.useState({
+      id: user.id,
+      avatar: user.avatar,
+      name: user.name,
+      lastName: user.lastName,
+      birthdate: user.birthdate,
+      address: user.address,
+      email: user.email,
+      nbCats: user.nbCats,
+      catSitter: false,
+    });
+    const userContextValue = React.useMemo(
+      () => ({
+        id: currentUser.id,
+        avatar: currentUser.avatar,
+        name: currentUser.name,
+        lastName: currentUser.lastName,
+        birthdate: currentUser.birthdate,
+        address: currentUser.address,
+        email: currentUser.email,
+        nbCats: currentUser.nbCats,
+        catSitter: currentUser.catSitter,
+        isConnected: true,
+      }),
+      [currentUser.id]
+    );
+    return (
+      <AuthentificationContext.Provider value={userContextValue}>
+        {children}
+      </AuthentificationContext.Provider>
+    );
+  }
 };
 
 export { AuthentificationContextProvider, AuthentificationContext };

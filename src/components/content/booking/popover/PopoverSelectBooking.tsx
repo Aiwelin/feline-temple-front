@@ -10,7 +10,7 @@ const PopoverSelectBooking = (props: DayJsType) => {
   return booking.type === "success" ? (
     <Popover
       title={booking.content}
-      content={<LinkCatSitter listCatSitter={catSitters} value={props.value} />}
+      content={<LinkCatSitter catSitters={catSitters} value={props.value} />}
       trigger={"click"}
     >
       <Badge
