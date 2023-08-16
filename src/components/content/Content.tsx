@@ -7,6 +7,8 @@ import Profil from "./Profil";
 import Notification from "./Notification";
 import Booking from "./booking/Booking";
 import FormSelectedBooking from "./booking/form/FormSelectedBooking";
+import MentionsLegales from "./MentionsLegales";
+import Contact from "./Contact";
 
 const Content = () => {
   const currentUser = useContext(AuthentificationContext);
@@ -20,6 +22,8 @@ const Content = () => {
         <Route path="/profil" element={<Profil {...currentUser} />}></Route>
         <Route path="/notifications" element={<Notification />}></Route>
         <Route path="/connexion" element={<Login />}></Route>
+        <Route path="/mentions-legales" element={<MentionsLegales />}></Route>
+        <Route path="/contact" element={<Contact />}></Route>
         <Route
           path="/reserver/:catsitterid"
           element={<FormSelectedBooking />}

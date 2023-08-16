@@ -1,22 +1,48 @@
 .header {
-  overflow: hidden;
-  background-color: #333;
+  display: flex;
+  flex-direction: inherit;
+  justify-content: center;
+  max-height: 50px;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-}
-.header a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
+  z-index: 1;
+  color: rgba(0, 0, 0, 0.88);
+  background: #ffffff;
 
-.header a:hover {
-  background: #ddd;
-  color: black;
+  .ant-menu {
+    width: 90%;
+  }
+  .text-logo {
+    visibility: hidden;
+  }
+  @media screen and (min-width: 750px) {
+    .text-logo {
+      padding: 0.5em;
+      height: 2em;
+      visibility: visible;
+    }
+  }
+  .logo {
+    padding: 0.5em;
+    height: 2em;
+    pointer-events: none;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .logo {
+      animation: logo-spin infinite 20s linear;
+    }
+  }
+
+  @keyframes logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
 }

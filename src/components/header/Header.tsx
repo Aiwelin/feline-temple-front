@@ -1,9 +1,11 @@
 import "./Header.css";
+import textLogo from "../../assets/logo-temple-felide.svg";
+import logo from "../../assets/pawprint.svg";
 import { Menu, MenuProps } from "antd";
 import {
   HomeOutlined,
   AppstoreOutlined,
-  MailOutlined,
+  BellOutlined,
   SettingOutlined,
   LoginOutlined,
   LogoutOutlined,
@@ -44,7 +46,7 @@ const Header = () => {
         {
           label: "Mes notifications",
           key: "notifications",
-          icon: <MailOutlined />,
+          icon: <BellOutlined />,
         },
         {
           label: "Se déconnecter",
@@ -91,6 +93,12 @@ const Header = () => {
   return (
     <header id="app-header" className="header">
       <MenuNavigate />
+      <img src={textLogo} className="text-logo" alt="Le temple félidé" />
+      <img
+        src={logo}
+        className="logo"
+        alt="logo représentant une patte de chat qui tourne"
+      />
     </header>
   );
 };

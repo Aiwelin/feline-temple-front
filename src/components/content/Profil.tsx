@@ -1,5 +1,5 @@
 import * as React from "react";
-import { User } from "../../UserInterface";
+import { User } from "../../interface/UserInterface";
 import { UserOutlined } from "@ant-design/icons";
 import { Avatar, Space } from "antd";
 
