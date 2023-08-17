@@ -1,7 +1,7 @@
 import * as React from "react";
 import { User } from "../../interface/UserInterface";
 import { UserOutlined } from "@ant-design/icons";
-import { Avatar, Space } from "antd";
+import { Avatar, Form, Input } from "antd";
 
 export default class Profil extends React.Component<User, {}> {
   constructor(props: User) {
@@ -9,19 +9,24 @@ export default class Profil extends React.Component<User, {}> {
   }
   render() {
     return (
-      <div id="form-profil">
-        <div id="form-name-profil">
+      <div>
+        <h2>Mon profil</h2>
+        <Form id="form-profil" layout="vertical" labelAlign="right">
           {this.props.avatar ? (
             <img key={this.props.avatar} src={this.props.avatar} />
           ) : (
-            " "
+            <Avatar size={64} icon={<UserOutlined />} />
           )}
-          {<Avatar size={64} icon={<UserOutlined />} />}
-          <p>
-            {this.props.name} {this.props.lastName}
-          </p>
-          <p>{this.props.address}</p>
-        </div>
+          <Form.Item label="Prénom">
+            <Input disabled value={this.props.name} />
+          </Form.Item>
+          <Form.Item label="Nom">
+            <Input disabled value={this.props.lastName} />
+          </Form.Item>
+          <Form.Item label="Adresse">
+            <Input disabled value={this.props.address} />
+          </Form.Item>
+        </Form>
       </div>
     );
   }

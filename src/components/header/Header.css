@@ -16,6 +16,7 @@
   }
   .text-logo {
     visibility: hidden;
+    border-bottom: 1px solid rgba(5, 5, 5, 0.06);
   }
   @media screen and (min-width: 750px) {
     .text-logo {
@@ -28,6 +29,7 @@
     padding: 0.5em;
     height: 2em;
     pointer-events: none;
+    border-bottom: 1px solid rgba(5, 5, 5, 0.06);
   }
 
   @media (prefers-reduced-motion: no-preference) {

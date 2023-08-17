@@ -2,6 +2,10 @@ import "./Contact.css";
 import { Button, Form, Input, message } from "antd";
 import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
 import { useState } from "react";
+export const layout = {
+  labelCol: { span: 4 },
+  wrapperCol: { span: 14 },
+};
 
 const Contact = () => {
   const [phoneContact, setPhoneContact] = useState();
@@ -22,7 +26,12 @@ const Contact = () => {
     <div id="contact" className="form-contact">
       <h2>Chat alors, vous avez besoin de nous contacter ?</h2>
       <p>Dans ces cas là, ce formulaire de contact est à votre disposition</p>
-      <Form layout="horizontal" scrollToFirstError onFinish={onFinish}>
+      <Form
+        {...layout}
+        labelAlign="right"
+        scrollToFirstError
+        onFinish={onFinish}
+      >
         <Form.Item
           name="name-lastname"
           label="Prénom & Nom"

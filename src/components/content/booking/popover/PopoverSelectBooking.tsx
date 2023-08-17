@@ -14,6 +14,7 @@ const PopoverSelectBooking = (props: DayJsType) => {
       trigger={"click"}
     >
       <Badge
+        className="badge-booking"
         status={booking.type as BadgeProps["status"]}
         text={booking.content}
       />

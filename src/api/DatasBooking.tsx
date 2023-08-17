@@ -42,7 +42,8 @@ const getDatasByBooking = (value: Dayjs) => {
   const booking = nbBooking
     ? {
         type: "success",
-        content: `${nbBooking} disponibles.`,
+        content:
+          nbBooking > 1 ? `${nbBooking} catSitters` : `${nbBooking} catSitter`,
         catSitters: catSitters,
       }
     : { type: "error", content: "" };

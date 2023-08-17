@@ -1,0 +1,11 @@
+p {
+  text-align: justify;
+}
+.ant-badge-status-text {
+  visibility: hidden;
+}
+@media screen and (min-width: 750px) {
+  .ant-badge-status-text {
+    visibility: visible;
+  }
+}

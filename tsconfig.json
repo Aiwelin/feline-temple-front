@@ -10,7 +10,7 @@
     "sourceMap": true,
     "strict": true
   },
-  "include": ["src"],
+  "include": ["src", "css"],
   "references": [
     {
       "path": "./tsconfig.node.json"

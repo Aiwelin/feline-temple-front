@@ -30,7 +30,7 @@ const Header = () => {
     },
     {
       label: "Mes réservations",
-      key: "reservations",
+      key: "mes-reservations",
       icon: <AppstoreOutlined />,
     },
     {
@@ -93,11 +93,13 @@ const Header = () => {
   return (
     <header id="app-header" className="header">
       <MenuNavigate />
-      <img src={textLogo} className="text-logo" alt="Le temple félidé" />
+      <h1>
+        <img src={textLogo} className="text-logo" alt="Le temple félidé" />
+      </h1>
       <img
         src={logo}
         className="logo"
-        alt="logo représentant une patte de chat qui tourne"
+        alt="logo du site temple félidé représentant une patte de chat qui tourne de manière permanente"
       />
     </header>
   );

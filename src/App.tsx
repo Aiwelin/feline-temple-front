@@ -1,6 +1,5 @@
 import * as React from "react";
 import "./App.css";
-import "./index.css";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, useNavigate } from "react-router-dom";
 import frFR from "antd/locale/fr_FR";
