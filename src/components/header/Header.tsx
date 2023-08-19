@@ -83,24 +83,29 @@ const Header = () => {
   const MenuNavigate = () => {
     return (
       <Menu
+        style={{ flex: "auto", minWidth: 0 }}
+        id="menu-responsive"
         mode="horizontal"
         items={currentUser.isConnected ? itemsConnected : itemsNotConnected}
         onClick={onChangeMenu}
       />
     );
   };
+  const sharedStyle = { flex: "0 0 50px", height: 20, background: "red" };
 
   return (
     <header id="app-header" className="header">
-      <MenuNavigate />
-      <h1>
-        <img src={textLogo} className="text-logo" alt="Le temple félidé" />
-      </h1>
-      <img
-        src={logo}
-        className="logo"
-        alt="logo du site temple félidé représentant une patte de chat qui tourne de manière permanente"
-      />
+      <div id="header-responsive">
+        <MenuNavigate />
+        <div id="header-title">
+          <img src={textLogo} className="text-logo" alt="Le temple félidé" />
+          <img
+            src={logo}
+            className="logo"
+            alt="logo du site temple félidé représentant une patte de chat qui tourne de manière permanente"
+          />
+        </div>
+      </div>
     </header>
   );
 };

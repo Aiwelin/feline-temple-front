@@ -1,3 +1,4 @@
+import "./Booking.css";
 import { DatePicker, Form } from "antd";
 import CalendarBooking from "./calendar/CalendarBooking";
 
@@ -5,7 +6,7 @@ const Booking = () => {
   const { RangePicker } = DatePicker;
   return (
     <div id="booking" className="form-booking">
-      <Form>
+      <Form layout="vertical" labelAlign="right">
         <p>
           Etiam ultrices massa at laoreet convallis. Suspendisse vel metus mi.
           Ut sagittis purus eu pellentesque eleifend. In imperdiet vehicula

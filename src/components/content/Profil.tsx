@@ -1,3 +1,4 @@
+import "./Profil.css";
 import * as React from "react";
 import { User } from "../../interface/UserInterface";
 import { UserOutlined } from "@ant-design/icons";
@@ -9,9 +10,9 @@ export default class Profil extends React.Component<User, {}> {
   }
   render() {
     return (
-      <div>
+      <div id="form-profil">
         <h2>Mon profil</h2>
-        <Form id="form-profil" layout="vertical" labelAlign="right">
+        <Form layout="vertical" labelAlign="right">
           {this.props.avatar ? (
             <img key={this.props.avatar} src={this.props.avatar} />
           ) : (

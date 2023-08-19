@@ -1,5 +1,7 @@
+import "./Notification.css";
 import { Alert, Space } from "antd";
-const Notification: React.FC = () => {
+
+const Notification = () => {
   return (
     <div id="form-notification">
       <h2>Mes notifications</h2>
