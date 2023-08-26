@@ -1,3 +1,4 @@
+import "./PopoverSelectBooking.scss";
 import type { BadgeProps } from "antd";
 import { Badge, Popover } from "antd";
 import getDatasByBooking from "../../../../api/DatasBooking";

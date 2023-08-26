@@ -1,4 +1,4 @@
-import "./Footer.css";
+import "./Footer.scss";
 import { Menu, MenuProps } from "antd";
 import { useNavigate } from "react-router-dom";
 

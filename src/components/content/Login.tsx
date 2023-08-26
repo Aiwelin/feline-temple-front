@@ -1,17 +1,22 @@
 import "./Login.css";
-import { Button, Checkbox, Form, Input } from "antd";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
+import { Button, Checkbox, Form, Input } from "antd";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-const onFinish = (values: any) => {
-  console.log("Succès:", values);
-};
-
-const onFinishFailed = (errorInfo: any) => {
-  console.log("Echec:", errorInfo);
-};
-
 const Login = () => {
+  const navigate = useNavigate();
+  const onFinish = (values: any) => {
+    console.log("Succès:", values);
+  };
+
+  const onFinishFailed = (errorInfo: any) => {
+    console.log("Echec:", errorInfo);
+  };
+
+  const redirectCreate = () => {
+    navigate("creation");
+  };
   const [passwordVisible, setPasswordVisible] = useState(false);
   return (
     <div id="form-login">
@@ -58,20 +63,19 @@ const Login = () => {
           />
         </Form.Item>
 
-        <Form.Item
-          name="remember"
-          valuePropName="checked"
-          wrapperCol={{ offset: 8, span: 16 }}
-        >
+        <Form.Item name="remember" valuePropName="checked">
           <Checkbox>Se souvenir de moi</Checkbox>
         </Form.Item>
 
-        <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+        <Form.Item>
           <Button type="primary" htmlType="submit">
             Se connecter
           </Button>
         </Form.Item>
       </Form>
+      <Button type="text" onClick={redirectCreate()}>
+        Pas de compte ? Inscrivez-vous.
+      </Button>
     </div>
   );
 };

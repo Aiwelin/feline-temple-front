@@ -1,0 +1,28 @@
+#booking-selected {
+  width: 100%;
+  display: block;
+
+  .avatar {
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+  }
+  #booking-selected-content {
+    display: flex;
+    justify-content: center;
+  }
+  #bottom-button {
+    padding-top: 1em;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    #back {
+      justify-content: right;
+      padding: 0.2em;
+    }
+    #button-primary-booking-selected-date {
+      justify-content: left;
+      padding: 0.2em;
+    }
+  }
+}

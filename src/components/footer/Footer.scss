@@ -1,0 +1,22 @@
+@import "../../styles/colors";
+@import "../../styles/font";
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-height: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2000;
+  background: $background-primary-color;
+
+  .ant-menu {
+    background: none;
+    font-family: $primary-font;
+    font-weight: bold;
+    font-size: 1em;
+  }
+}

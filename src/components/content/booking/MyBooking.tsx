@@ -1,3 +1,4 @@
+import "./MyBooking.css";
 import ListMyBooking from "./list/ListMyBooking";
 
 const MyBooking = () => {

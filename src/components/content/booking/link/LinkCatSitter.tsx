@@ -1,4 +1,3 @@
-import "./LinkCatSitter.css";
 import getDatasUsers from "../../../../api/DatasUsers";
 import { Link } from "react-router-dom";
 import { BookingCatSitterType } from "../type/BookingCatSitterType";

@@ -1,0 +1,99 @@
+@import "../../styles/size";
+@import "../../styles/font";
+@import "../../styles/colors";
+
+.header {
+  display: flex;
+  max-height: 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1;
+  color: rgba(0, 0, 0, 0.88);
+  background: $background-primary-color;
+  border-bottom: 1px solid rgba(5, 5, 5, 0.06);
+
+  #header-responsive {
+    width: 100%;
+
+    #header-navigate {
+      width: 55%;
+      float: left;
+      .ant-menu {
+        border-bottom: none;
+        background: none;
+        font-family: $primary-font;
+        font-weight: bold;
+        font-size: 1em;
+
+        .ant-menu-item-icon {
+          color: $primary-color;
+        }
+
+        .ant-menu-sub {
+          background: $background-primary-color;
+        }
+      }
+
+      #menu-responsive {
+        min-width: 0;
+        flex: auto;
+      }
+      .ant-menu-title-content {
+        visibility: hidden;
+      }
+      @media screen and (min-width: $desktop-min-width) {
+        .ant-menu-title-content {
+          visibility: visible;
+        }
+      }
+    }
+  }
+
+  #header-title {
+    width: 40%;
+    float: right;
+    justify-content: right;
+
+    #div-text-logo {
+      width: 70%;
+      float: left;
+      visibility: hidden;
+    }
+    #div-logo {
+      float: right;
+    }
+    @media screen and (min-width: $desktop-min-width) {
+      #div-text-logo {
+        visibility: visible;
+        .text-logo {
+          padding: 0.5em;
+          height: 2em;
+        }
+      }
+    }
+    .logo {
+      padding: 0.5em;
+      height: 2em;
+      pointer-events: none;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .logo {
+        animation: logo-spin infinite 20s linear;
+      }
+    }
+
+    @keyframes logo-spin {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}

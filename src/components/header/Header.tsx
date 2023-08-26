@@ -1,4 +1,4 @@
-import "./Header.css";
+import "./Header.scss";
 import textLogo from "../../assets/logo-temple-felide.svg";
 import logo from "../../assets/pawprint.svg";
 import { Menu, MenuProps } from "antd";
@@ -82,13 +82,14 @@ const Header = () => {
 
   const MenuNavigate = () => {
     return (
-      <Menu
-        style={{ flex: "auto", minWidth: 0 }}
-        id="menu-responsive"
-        mode="horizontal"
-        items={currentUser.isConnected ? itemsConnected : itemsNotConnected}
-        onClick={onChangeMenu}
-      />
+      <div id="header-navigate">
+        <Menu
+          id="menu-responsive"
+          mode="horizontal"
+          items={currentUser.isConnected ? itemsConnected : itemsNotConnected}
+          onClick={onChangeMenu}
+        />
+      </div>
     );
   };
   const sharedStyle = { flex: "0 0 50px", height: 20, background: "red" };
@@ -98,12 +99,16 @@ const Header = () => {
       <div id="header-responsive">
         <MenuNavigate />
         <div id="header-title">
-          <img src={textLogo} className="text-logo" alt="Le temple félidé" />
-          <img
-            src={logo}
-            className="logo"
-            alt="logo du site temple félidé représentant une patte de chat qui tourne de manière permanente"
-          />
+          <div id="div-text-logo">
+            <img src={textLogo} className="text-logo" alt="Le temple félidé" />
+          </div>
+          <div id="div-logo">
+            <img
+              src={logo}
+              className="logo"
+              alt="logo du site temple félidé représentant une patte de chat qui tourne de manière permanente"
+            />
+          </div>
         </div>
       </div>
     </header>

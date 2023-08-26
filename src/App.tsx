@@ -1,7 +1,7 @@
 import * as React from "react";
-import "./App.css";
+import "./App.scss";
 import { createRoot } from "react-dom/client";
-import { BrowserRouter, useNavigate } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import frFR from "antd/locale/fr_FR";
 import { ConfigProvider } from "antd";
 import { Header } from "./components/header/Header.js";

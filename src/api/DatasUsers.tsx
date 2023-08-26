@@ -2,7 +2,7 @@ const getDatasUsers = () => {
   return [
     {
       id: 1,
-      avatar: "../assets/avatar/apichard.jpg",
+      avatar: "src/assets/avatar/apichard.jpg",
       name: "Amandine",
       lastName: "PICHARD",
       birthdate: "1991-04-13",
