@@ -29,14 +29,26 @@ const Content = () => {
     <div id="app-content" className="content">
       <Routes>
         <Route path={DEFAULT_ROOT} element={<Booking />}></Route>
-        <Route path={HOME} element={<Booking />}></Route>
-        <Route path={MY_BOOKING} element={<MyBooking />}></Route>
-        <Route path={PROFIL} element={<Profil {...currentUser} />}></Route>
-        <Route path={NOTIFICATIONS} element={<Notification />}></Route>
-        <Route path={CONNEXION} element={<Login />}></Route>
-        <Route path={LEGAL} element={<MentionsLegales />}></Route>
-        <Route path={CONTACT} element={<Contact />}></Route>
-        <Route path={BOOKING} element={<FormSelectedBooking />}></Route>
+        <Route path={DEFAULT_ROOT + HOME} element={<Booking />}></Route>
+        <Route path={DEFAULT_ROOT + MY_BOOKING} element={<MyBooking />}></Route>
+        <Route
+          path={DEFAULT_ROOT + PROFIL}
+          element={<Profil {...currentUser} />}
+        ></Route>
+        <Route
+          path={DEFAULT_ROOT + NOTIFICATIONS}
+          element={<Notification />}
+        ></Route>
+        <Route path={DEFAULT_ROOT + CONNEXION} element={<Login />}></Route>
+        <Route
+          path={DEFAULT_ROOT + LEGAL}
+          element={<MentionsLegales />}
+        ></Route>
+        <Route path={DEFAULT_ROOT + CONTACT} element={<Contact />}></Route>
+        <Route
+          path={DEFAULT_ROOT + BOOKING}
+          element={<FormSelectedBooking />}
+        ></Route>
       </Routes>
     </div>
   );

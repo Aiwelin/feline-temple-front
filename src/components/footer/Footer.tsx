@@ -1,8 +1,8 @@
 import "./Footer.scss";
 import { Menu, MenuProps } from "antd";
 import { useNavigate } from "react-router-dom";
-
 import { MailOutlined, IssuesCloseOutlined } from "@ant-design/icons";
+import { DEFAULT_ROOT, LEGAL, CONTACT } from "../../root/Path";
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -10,17 +10,17 @@ const Footer = () => {
   const items: MenuProps["items"] = [
     {
       label: "Contact",
-      key: "contact",
+      key: CONTACT,
       icon: <MailOutlined />,
     },
     {
       label: "Mentions légales",
-      key: "mentions-legales",
+      key: LEGAL,
       icon: <IssuesCloseOutlined />,
     },
   ];
   function onChangeMenu(menu: any) {
-    navigate(menu.key);
+    navigate(DEFAULT_ROOT + menu.key);
   }
 
   return (

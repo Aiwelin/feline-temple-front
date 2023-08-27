@@ -11,10 +11,17 @@ import {
   LogoutOutlined,
   ProfileOutlined,
 } from "@ant-design/icons";
-//import { HomeCatIcon } from "../icons/CatsIcon";
 import { useContext } from "react";
 import { AuthentificationContext } from "../../context/AuthentificationContext";
 import { useNavigate } from "react-router-dom";
+import {
+  DEFAULT_ROOT,
+  HOME,
+  MY_BOOKING,
+  PROFIL,
+  NOTIFICATIONS,
+  CONNEXION,
+} from "../../root/Path";
 
 const Header = () => {
   const currentUser = useContext(AuthentificationContext);
@@ -24,13 +31,12 @@ const Header = () => {
   const itemsConnected: MenuProps["items"] = [
     {
       label: "Accueil",
-      key: "accueil",
+      key: HOME,
       icon: <HomeOutlined />,
-      // icon: <HomeCatIcon style={{ color: "hotpink" }} />,
     },
     {
       label: "Mes réservations",
-      key: "mes-reservations",
+      key: MY_BOOKING,
       icon: <AppstoreOutlined />,
     },
     {
@@ -40,12 +46,12 @@ const Header = () => {
       children: [
         {
           label: "Mon profil",
-          key: "profil",
+          key: PROFIL,
           icon: <ProfileOutlined />,
         },
         {
           label: "Mes notifications",
-          key: "notifications",
+          key: NOTIFICATIONS,
           icon: <BellOutlined />,
         },
         {
@@ -61,12 +67,12 @@ const Header = () => {
   const itemsNotConnected: MenuProps["items"] = [
     {
       label: "Accueil",
-      key: "accueil",
+      key: HOME,
       icon: <HomeOutlined />,
     },
     {
       label: `Se connecter`,
-      key: "connexion",
+      key: CONNEXION,
       icon: <LoginOutlined />,
     },
   ];
@@ -74,9 +80,9 @@ const Header = () => {
   function onChangeMenu(menu: any) {
     if (menu.key === "deconnexion") {
       currentUser.isConnected = false;
-      navigate("/");
+      navigate(DEFAULT_ROOT);
     } else {
-      navigate(menu.key);
+      navigate(DEFAULT_ROOT + menu.key);
     }
   }
 

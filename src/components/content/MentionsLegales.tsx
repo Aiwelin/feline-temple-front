@@ -3,6 +3,15 @@ const MentionsLegales = () => {
     <div id="mentions-legales" className="mentions-legales">
       <h2>Mentions Légales</h2>
       <p>
+        {" "}
+        Le site s'est inspiré du template google slide réalisé par{" "}
+        <a href="https://slidesgo.com/">Slidesgo</a>. Les icône proviennent de{" "}
+        <a href="https://ant.design/components/icon">AntD</a>, de{" "}
+        <a href="https://www.flaticon.com/">Flaticon</a>, mais également de
+        réalisation personnelle. Enfin l'infograhie et les immages proviennent
+        de <a href="https://www.freepik.com/">Freepik</a>.
+      </p>
+      <p>
         In diam odio, vulputate non magna ut, mollis ultricies est. Sed aliquet
         auctor est, ac imperdiet libero convallis nec. Cras a ipsum et diam
         pharetra tempus. Vestibulum iaculis iaculis ante nec vehicula. Nullam

@@ -10,6 +10,7 @@ export default defineConfig(({ mode }) => {
   // Optional: Populate NODE_ENV with the current mode (development/production)
   env.NODE_ENV = mode;
 
+  const base = "http://localhost:5173/feline-temple/";
   const envWithProcessPrefix = {
     "process.env": `${JSON.stringify(env)}`,
   };
@@ -17,5 +18,6 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [react()],
     define: envWithProcessPrefix,
+    base: base,
   };
 });
