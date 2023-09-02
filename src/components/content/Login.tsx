@@ -1,35 +1,64 @@
 import "./Login.css";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
-import { Button, Checkbox, Form, Input } from "antd";
+import { Button, Checkbox, Form, Input, message } from "antd";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import Cookies from "universal-cookie";
+import { DEFAULT_ROOT, CREATION, HOME } from "../../root/Path";
+import { useEffect, useState } from "react";
 
 const Login = () => {
+  const cookies = new Cookies();
   const navigate = useNavigate();
-  const onFinish = (values: any) => {
-    console.log("Succès:", values);
+  const [cookie, setCookie] = useState();
+  const onFinish = (values: FieldLoginType) => {
+    console.log(values);
+    if (values.remember) {
+      console.log(values);
+      console.log(values);
+      setCookieRememberMe(values.email);
+    } else {
+      setRemoveCookie();
+    }
+    message.success("Connexion réussie. Redirection dans 5 secondes");
+    // TODO ajouter un délai de 5 secondes
+    navigate(DEFAULT_ROOT + HOME);
   };
 
   const onFinishFailed = (errorInfo: any) => {
-    console.log("Echec:", errorInfo);
+    message.error("Connexion impossible.");
+  };
+
+  const setCookieRememberMe = (email: string) => {
+    cookies.set("remember-me", { email }, { path: "/", secure: true });
+  };
+
+  const setRemoveCookie = () => {
+    cookies.remove("remember-me", { path: "/", secure: true });
   };
 
   const redirectCreate = () => {
-    navigate("creation");
+    navigate(DEFAULT_ROOT + CREATION);
   };
-  const [passwordVisible, setPasswordVisible] = useState(false);
+
+  useEffect(() => {
+    const cookieRememberMe = cookies.get("remember-me");
+    if (cookieRememberMe) {
+      setCookie(cookieRememberMe);
+    }
+  });
+
   return (
     <div id="form-login">
       <h2>Se connecter</h2>
       <Form
         layout="vertical"
         labelAlign="right"
-        initialValues={{ remember: true }}
+        initialValues={{ remember: false }}
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
         autoComplete="off"
       >
-        <Form.Item
+        <Form.Item<FieldLoginType>
           label="Email"
           name="email"
           rules={[
@@ -39,11 +68,12 @@ const Login = () => {
           <Input
             type="email"
             placeholder="Email"
+            value={cookie}
             prefix={<UserOutlined className="site-form-item-icon" />}
           />
         </Form.Item>
 
-        <Form.Item
+        <Form.Item<FieldLoginType>
           label="Mot de passe"
           name="password"
           rules={[
@@ -55,15 +85,11 @@ const Login = () => {
         >
           <Input.Password
             placeholder="Mot de passe"
-            visibilityToggle={{
-              visible: passwordVisible,
-              onVisibleChange: setPasswordVisible,
-            }}
             prefix={<LockOutlined className="site-form-item-icon" />}
           />
         </Form.Item>
 
-        <Form.Item name="remember" valuePropName="checked">
+        <Form.Item<FieldLoginType> name="remember" valuePropName="checked">
           <Checkbox>Se souvenir de moi</Checkbox>
         </Form.Item>
 
@@ -73,7 +99,7 @@ const Login = () => {
           </Button>
         </Form.Item>
       </Form>
-      <Button type="text" onClick={redirectCreate()}>
+      <Button type="text" onClick={redirectCreate}>
         Pas de compte ? Inscrivez-vous.
       </Button>
     </div>

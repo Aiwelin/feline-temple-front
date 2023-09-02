@@ -7,3 +7,4 @@ export const CONNEXION = "connexion";
 export const LEGAL = "mentions-legales";
 export const CONTACT = "contact";
 export const BOOKING = "reserver/:catsitterid";
+export const CREATION = "creation";

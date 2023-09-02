@@ -2,15 +2,16 @@ const MentionsLegales = () => {
   return (
     <div id="mentions-legales" className="mentions-legales">
       <h2>Mentions Légales</h2>
+      <h3>Propriété intellectuelle et crédit</h3>
       <p>
-        {" "}
         Le site s'est inspiré du template google slide réalisé par{" "}
         <a href="https://slidesgo.com/">Slidesgo</a>. Les icône proviennent de{" "}
         <a href="https://ant.design/components/icon">AntD</a>, de{" "}
         <a href="https://www.flaticon.com/">Flaticon</a>, mais également de
-        réalisation personnelle. Enfin l'infograhie et les immages proviennent
-        de <a href="https://www.freepik.com/">Freepik</a>.
+        réalisation personnelle. Enfin l'infograhie et les images proviennent de{" "}
+        <a href="https://www.freepik.com/">Freepik</a>.
       </p>
+      <h3>Informations générales</h3>
       <p>
         In diam odio, vulputate non magna ut, mollis ultricies est. Sed aliquet
         auctor est, ac imperdiet libero convallis nec. Cras a ipsum et diam
@@ -26,20 +27,7 @@ const MentionsLegales = () => {
         convallis. Sed sed dui placerat eros molestie maximus. Nunc feugiat
         euismod velit, eget egestas nibh feugiat a.
       </p>
-      <p>
-        Pellentesque facilisis at turpis a tempor. Donec rhoncus mollis orci, at
-        iaculis mi rutrum in. Vestibulum auctor elit erat, vitae ultricies orci
-        pharetra eget. Quisque placerat consequat neque, vel dignissim nunc
-        euismod nec. Mauris et posuere elit, vitae cursus lacus. Phasellus non
-        auctor sapien. Ut vel metus gravida, interdum augue nec, maximus neque.
-        Phasellus auctor pellentesque ligula eu laoreet. Duis mauris odio,
-        vehicula nec enim ultricies, pellentesque varius ipsum. Sed at diam in
-        ante sagittis pharetra. Aliquam leo erat, fermentum facilisis tempus
-        sed, semper tempor mauris. Morbi velit urna, cursus quis libero ac,
-        egestas viverra risus. Ut dapibus turpis quis eros convallis, nec
-        sagittis nibh faucibus. Morbi pharetra sem eget mi efficitur, non
-        efficitur sem faucibus.
-      </p>
+      <h3>Hébergement</h3>
       <p>
         Praesent imperdiet tortor eu lorem porta, quis lacinia lectus fringilla.
         Sed rhoncus nisi vel odio porta, quis aliquet orci congue. Integer
@@ -56,6 +44,22 @@ const MentionsLegales = () => {
         egestas. Suspendisse feugiat sem eget lacinia aliquet. Proin imperdiet
         libero venenatis nisi lacinia, eu mattis turpis facilisis.
       </p>
+      <h3>Informatiques et libertés (CNIL)</h3>
+      <p>
+        Pellentesque facilisis at turpis a tempor. Donec rhoncus mollis orci, at
+        iaculis mi rutrum in. Vestibulum auctor elit erat, vitae ultricies orci
+        pharetra eget. Quisque placerat consequat neque, vel dignissim nunc
+        euismod nec. Mauris et posuere elit, vitae cursus lacus. Phasellus non
+        auctor sapien. Ut vel metus gravida, interdum augue nec, maximus neque.
+        Phasellus auctor pellentesque ligula eu laoreet. Duis mauris odio,
+        vehicula nec enim ultricies, pellentesque varius ipsum. Sed at diam in
+        ante sagittis pharetra. Aliquam leo erat, fermentum facilisis tempus
+        sed, semper tempor mauris. Morbi velit urna, cursus quis libero ac,
+        egestas viverra risus. Ut dapibus turpis quis eros convallis, nec
+        sagittis nibh faucibus. Morbi pharetra sem eget mi efficitur, non
+        efficitur sem faucibus.
+      </p>
+      <h3>Gestion des cookies</h3>
       <p>
         Phasellus mattis, nunc nec dapibus luctus, tortor odio aliquam orci, non
         pretium diam metus quis dui. Nunc non ex placerat lectus convallis
@@ -65,6 +69,7 @@ const MentionsLegales = () => {
         vel convallis urna. Mauris euismod tempus magna eu lobortis. Curabitur
         rhoncus placerat massa, quis congue enim bibendum id.
       </p>
+      <h3>Données personnelles</h3>
       <p>
         Nullam eu tortor in nisi blandit tempus a non leo. Nunc sagittis sem sed
         velit ullamcorper, eget fringilla justo laoreet. Quisque suscipit nisi

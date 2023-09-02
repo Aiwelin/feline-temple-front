@@ -20,7 +20,9 @@ import {
   LEGAL,
   CONTACT,
   BOOKING,
+  CREATION,
 } from "../../root/Path";
+import SignUp from "./SignUp";
 
 const Content = () => {
   const currentUser = useContext(AuthentificationContext);
@@ -45,6 +47,7 @@ const Content = () => {
           element={<MentionsLegales />}
         ></Route>
         <Route path={DEFAULT_ROOT + CONTACT} element={<Contact />}></Route>
+        <Route path={DEFAULT_ROOT + CREATION} element={<SignUp />}></Route>
         <Route
           path={DEFAULT_ROOT + BOOKING}
           element={<FormSelectedBooking />}

@@ -9,6 +9,7 @@ const AuthentificationContext = React.createContext({
   birthdate: "",
   address: "",
   email: "",
+  password: "",
   nbCats: 0,
   catSitter: false,
   isConnected: false,
@@ -26,6 +27,7 @@ const AuthentificationContextProvider = ({ children }: any) => {
       birthdate: user.birthdate,
       address: user.address,
       email: user.email,
+      password: user.password,
       nbCats: user.nbCats,
       catSitter: false,
     });
@@ -38,6 +40,7 @@ const AuthentificationContextProvider = ({ children }: any) => {
         birthdate: currentUser.birthdate,
         address: currentUser.address,
         email: currentUser.email,
+        password: currentUser.password,
         nbCats: currentUser.nbCats,
         catSitter: currentUser.catSitter,
         isConnected: true,

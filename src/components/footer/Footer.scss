@@ -11,7 +11,10 @@
   left: 0;
   width: 100%;
   z-index: 2000;
-  background: $background-primary-color;
+  background: white url("../../assets/footer_right.png");
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  border-top: 2px solid $primary-color;
 
   .ant-menu {
     background: none;

@@ -3,6 +3,8 @@ export interface User {
   name: string;
   lastName: string;
   address: string;
+  email: string;
+  password: string;
   isConnected: boolean;
 }
 
@@ -13,6 +15,7 @@ export interface UserJson {
   birthdate: string;
   address: string;
   email: string;
+  password: string;
   nbCats: number;
   catSitter: boolean;
   siren: string;

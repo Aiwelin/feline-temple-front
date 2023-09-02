@@ -1,7 +1,6 @@
 import getDatasUsers from "../../../../api/DatasUsers";
 import { Link } from "react-router-dom";
 import { BookingCatSitterType } from "../type/BookingCatSitterType";
-
 const LinkCatSitter = (props: BookingCatSitterType) => {
   const users = getDatasUsers();
   const user = (id: number) => {
@@ -15,7 +14,7 @@ const LinkCatSitter = (props: BookingCatSitterType) => {
           props.catSitters.map((catSitter) => (
             <li>
               <Link
-                to={`/reserver/${catSitter}?date=${props.value?.format(
+                to={`/feline-temple/reserver/${catSitter}?date=${props.value?.format(
                   "DD-MM-YYYY"
                 )}`}
               >
