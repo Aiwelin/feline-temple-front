@@ -10,14 +10,15 @@ export interface User {
 
 export interface UserJson {
   id: number;
+  avatar: string;
   name: string;
   lastName: string;
   birthdate: string;
   address: string;
   email: string;
   password: string;
-  nbCats: number;
+  nbCats?: number;
   catSitter: boolean;
-  siren: string;
-  siret: string;
+  siren?: string;
+  siret?: string;
 }
