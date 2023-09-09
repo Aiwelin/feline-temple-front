@@ -10,7 +10,8 @@ const LinkCatSitter = (props: BookingCatSitterType) => {
   return (
     <div id="booking-catsitters" className="link-booking-catsitters">
       <ul>
-        {props.catSitters.length > 0 &&
+        {props.catSitters &&
+          props.catSitters.length > 0 &&
           props.catSitters.map((catSitter) => (
             <li>
               <Link

@@ -1,8 +1,7 @@
-// src/__tests__/App.test.tsx
 import { expect, it } from "vitest";
-import App from "../App";
+import MentionsLegales from "../../../components/content/MentionsLegales";
 
 it("should work as expected", () => {
-  const result = <App />;
+  const result = <MentionsLegales />;
   expect(result).toMatchSnapshot();
 });

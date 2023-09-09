@@ -1,10 +1,13 @@
 import "./Contact.css";
 import { Button, Form, Input, message } from "antd";
-import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
+import PhoneInput, {
+  Value,
+  isValidPhoneNumber,
+} from "react-phone-number-input";
 import { useState } from "react";
 
 const Contact = () => {
-  const [phoneContact, setPhoneContact] = useState();
+  const [phoneContact, setPhoneContact] = useState<Value>();
   const [sendContact, setSendContact] = useState(false);
 
   const onFinish = (values: any) => {
@@ -83,9 +86,9 @@ const Contact = () => {
             international={false}
             defaultCountry="FR"
             placeholder="Téléphone"
+            value={phoneContact}
             onChange={setPhoneContact}
             className="input-phone"
-            value={phoneContact}
             error={
               phoneContact
                 ? isValidPhoneNumber(phoneContact)

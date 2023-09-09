@@ -3,7 +3,7 @@ import type { CellRenderInfo } from "rc-picker/lib/interface";
 import type { CalendarMode } from "antd/es/calendar/generateCalendar";
 import { Alert, Calendar, Form } from "antd";
 import { useState } from "react";
-import * as dayjs from "dayjs";
+import dayjs from "dayjs";
 import CellBooking from "../cell/CellBooking";
 
 const CalendarBooking = () => {

@@ -1,6 +1,6 @@
 import type { Dayjs } from "dayjs";
 
 export type BookingCatSitterType = {
-  catSitters: number[];
+  catSitters?: number[];
   value: Dayjs;
 };

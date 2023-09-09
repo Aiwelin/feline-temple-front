@@ -1,5 +1,5 @@
 import type { Dayjs } from "dayjs";
-import * as dayjs from "dayjs";
+import dayjs from "dayjs";
 
 const getDatasByBooking = (value: Dayjs) => {
   const initDatasBooking = () => {

@@ -1,11 +1,7 @@
 {
-    "compilerOptions": {
-        "sourceMap": false // Très important pour éviter de donner des informations à un attaquant
-    },
-    "extends": "./tsconfig",
-    "exclude": [
-        "./src/__tests__/**",
-        "./src/__mocks__/**",
-        "./src/test-utils"
-    ]
+  "compilerOptions": {
+    "sourceMap": false // Très important pour éviter de donner des informations à un attaquant
+  },
+  "extends": "./tsconfig",
+  "exclude": ["./src/__tests__/**", "./src/__mocks__/**"]
 }

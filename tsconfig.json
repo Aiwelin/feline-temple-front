@@ -8,7 +8,9 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "sourceMap": true,
-    "strict": true
+    "strict": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
   },
   "include": ["src", "css", "additional.d.ts"],
   "references": [

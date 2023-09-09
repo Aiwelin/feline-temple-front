@@ -1,6 +1,6 @@
 import "./Profil.css";
 import * as React from "react";
-import { User } from "../../interface/UserInterface";
+import User from "../../interface/User";
 import { UserOutlined } from "@ant-design/icons";
 import { Avatar, Form, Input } from "antd";
 

@@ -1,5 +1,5 @@
-import * as React from "react";
-import * as dayjs from "dayjs";
+import React from "react";
+import dayjs from "dayjs";
 
 const BookingCatSitterContext = React.createContext({
   id: 0,
