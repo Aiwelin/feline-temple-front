@@ -51,29 +51,29 @@
       "catSitter": false
     }
   ],
-  "booking": [
+  "availables": [
     {
-      "dateBooking": "2023-09-18T09:00:00Z",
+      "dateBooking": "2023-09-18",
       "id": 1
     },
     {
-      "dateBooking": "2023-09-18T09:00:00Z",
+      "dateBooking": "2023-09-18",
       "id": 2
     },
     {
-      "dateBooking": "2023-09-18T09:00:00Z",
+      "dateBooking": "2023-09-18",
       "id": 3
     },
     {
-      "dateBooking": "2023-09-20T09:00:00Z",
+      "dateBooking": "2023-09-20",
       "id": 1
     },
     {
-      "dateBooking": "2023-09-20T09:00:00Z",
+      "dateBooking": "2023-09-20",
       "id": 2
     },
     {
-      "dateBooking": "2023-09-21T09:00:00Z",
+      "dateBooking": "2023-09-21",
       "id": 3
     }
   ]

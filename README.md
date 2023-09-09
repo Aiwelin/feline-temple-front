@@ -10,6 +10,11 @@
 
 `npm run dev`
 
+### Lancement du serveur Json
+
+`cd src/__mock__`
+`json-server --watch db.json`
+
 ### Génération pour la production
 
 `npm run build`
@@ -40,9 +45,11 @@
 
 ### Tests
 
+- [Vitest](https://mswjs.io/)
 - [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
 - [MSW](https://mswjs.io/)
 
 ### Bouchons
 
+- [Json Server](https://www.npmjs.com/package/json-server)
 - [Fetch Mock Jest](https://www.npmjs.com/package/fetch-mock-jest)

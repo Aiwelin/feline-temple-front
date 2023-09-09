@@ -1,7 +1,4 @@
-import { useState } from "react";
-import { UserJson } from "../interface/User";
-
-const [users, setUsers] = useState([]);
+import UserJson from "../interface/UserJson";
 
 const fetchUsers = async () => {
   try {
@@ -11,9 +8,9 @@ const fetchUsers = async () => {
     if (!response.ok) {
       throw new Error("Users is not OK");
     }
-    const data = await response.json();
-    console.log(data);
-    setUsers(data);
+    const data: UserJson[] = await response.json();
+    console.debug(data);
+    return data;
   } catch (error) {
     console.error("Error:", error);
   }

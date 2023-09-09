@@ -1,14 +1,15 @@
 import "./FormSelectedBooking.css";
 import { Avatar, Button, message } from "antd";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { PoweroffOutlined, UserOutlined } from "@ant-design/icons";
 import { useLocation, useParams } from "react-router-dom";
 import { BookingCatSitterContext } from "../../../../context/BookingCatSitterContext";
+import fetchUsers from "../../../../api/UserService";
 import ButtonBack from "../../../common/button/ButtonBack";
-import getDatasUsers from "../../../../api/DatasUsers";
+import UserJson from "../../../../interface/UserJson";
 
 const FormSelectedBooking = () => {
-  const users = getDatasUsers();
+  const [users, setUsers] = useState<UserJson[]>([]);
   const bookingContext = useContext(BookingCatSitterContext);
   const [currentBooking, setCurrentBooking] = useState({});
   const [loadings, setLoadings] = useState<boolean[]>([]);
@@ -46,6 +47,16 @@ const FormSelectedBooking = () => {
       message.error("Aucun CatSitter selectionné");
     }
   };
+
+  useEffect(() => {
+    fetchUsers()
+      .then((datas) => {
+        if (datas) {
+          setUsers(datas);
+        }
+      })
+      .catch();
+  }, []);
 
   return (
     <div id="booking-selected" className="form-selected-booking">

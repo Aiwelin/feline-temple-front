@@ -1,3 +1,27 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`should work as expected 1`] = `<Profil />`;
+exports[`should work as expected 1`] = `
+<Profil
+  address="18 RUE MAGDALINE, 44700 NANTES"
+  avatar="src/assets/avatar/apichard.jpg"
+  email="amandine.pichard.auditeur@lecnam.net"
+  isConnected={true}
+  lastName="PICHARD"
+  name="Amandine"
+  password="Test@2023"
+/>
+`;
+
+exports[`should work as expected with data 1`] = `
+<Profil
+  address="18 RUE MAGDALINE, 44700 NANTES"
+  avatar="src/assets/avatar/apichard.jpg"
+  email="amandine.pichard.auditeur@lecnam.net"
+  isConnected={true}
+  lastName="PICHARD"
+  name="Amandine"
+  password="Test@2023"
+/>
+`;
+
+exports[`should work as expected with no data 1`] = `<Profil />`;

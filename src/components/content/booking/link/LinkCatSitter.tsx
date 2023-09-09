@@ -1,11 +1,25 @@
-import getDatasUsers from "../../../../api/DatasUsers";
+import fetchUsers from "../../../../api/UserService";
+import UserJson from "../../../../interface/UserJson";
 import { Link } from "react-router-dom";
 import { BookingCatSitterType } from "../type/BookingCatSitterType";
+import { useEffect, useState } from "react";
+
 const LinkCatSitter = (props: BookingCatSitterType) => {
-  const users = getDatasUsers();
-  const user = (id: number) => {
-    return users.find((user) => user.id === id);
+  const [users, setUsers] = useState<UserJson[]>([]);
+
+  const currentUser = (id: number) => {
+    return users.find((user: UserJson) => user.id === id);
   };
+
+  useEffect(() => {
+    fetchUsers()
+      .then((datas) => {
+        if (datas) {
+          setUsers(datas);
+        }
+      })
+      .catch();
+  }, []);
 
   return (
     <div id="booking-catsitters" className="link-booking-catsitters">
@@ -19,9 +33,9 @@ const LinkCatSitter = (props: BookingCatSitterType) => {
                   "DD-MM-YYYY"
                 )}`}
               >
-                {user(catSitter)?.name}
+                {currentUser(catSitter)?.name}
                 &nbsp;
-                {user(catSitter)?.lastName}
+                {currentUser(catSitter)?.lastName}
               </Link>
             </li>
           ))}

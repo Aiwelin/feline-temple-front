@@ -7,7 +7,7 @@ export default interface UserJson {
   address: string;
   email: string;
   password: string;
-  nbCats?: number;
+  nbCats: number;
   catSitter: boolean;
   siren?: string;
   siret?: string;

@@ -2,7 +2,7 @@ import * as React from "react";
 import { createRoot } from "react-dom/client";
 import { ConfigProvider } from "antd";
 import frFR from "antd/locale/fr_FR";
-import App from "./App.tsx";
+import App from "./App";
 
 let root = document.getElementById("root");
 
