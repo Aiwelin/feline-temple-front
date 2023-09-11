@@ -23,7 +23,6 @@
    2. [Choix technlogiques](#conception_technologies)
    3. [Cas d’utilisations](#conception_cas_utilisation)
 5. [Bibliographies](#bibliographie)
-6. [Annexes](#annexes)
 
 <div style="page-break-after: always;"></div>
 
@@ -1073,9 +1072,9 @@ BookingCatSitterService .> AvailabilityCatSitterService
 AvailabilityCatSitterService..> AvailabilityCatSitterRepository
 BookingCatSitterRepository ..> BookingCatSitter
 AvailabilityCatSitterRepository..> AvailabilityCatSitter
-BookingCatSitter _- User : catSitter
-BookingCatSitter _- User : catIndividual
-User -\* AvailabilityCatSitter : catSitter
+BookingCatSitter -> User : catSitter
+BookingCatSitter -> User : catIndividual
+User -* AvailabilityCatSitter : catSitter
 
 @enduml
 
@@ -1439,9 +1438,9 @@ User : String lastname
 User : Date birthdate
 User : [...]
 
-BookingCatSitter _- User : catSitter
-BookingCatSitter _- User : catIndividual
-User -\* AvailabilityCatSitter : catSitter
+BookingCatSitter -> User : catSitter
+BookingCatSitter -> User : catIndividual
+User -* AvailabilityCatSitter : catSitter
 
 @enduml
 
@@ -1496,9 +1495,9 @@ User : [...]
 BookingCatSitterRepository ..> BookingCatSitter
 AvailabilityCatSitterRepository..> AvailabilityCatSitter
 UserRepository ..> User
-BookingCatSitter _- User : catSitter
-BookingCatSitter _- User : catIndividual
-User -\* AvailabilityCatSitter : catSitter
+BookingCatSitter -> User : catSitter
+BookingCatSitter -> User : catIndividual
+User -* AvailabilityCatSitter : catSitter
 
 @enduml
 
@@ -2118,9 +2117,9 @@ BookingCatSitterService .> AvailabilityCatSitterService
 AvailabilityCatSitterService..> AvailabilityCatSitterRepository
 BookingCatSitterRepository ..> BookingCatSitter
 AvailabilityCatSitterRepository..> AvailabilityCatSitter
-BookingCatSitter _- User : catSitter
-BookingCatSitter _- User : catIndividual
-User -\* AvailabilityCatSitter : catSitter
+BookingCatSitter -> User : catSitter
+BookingCatSitter -> User : catIndividual
+User -* AvailabilityCatSitter : catSitter
 
 @enduml
 
@@ -2565,9 +2564,9 @@ User : String lastname
 User : Date birthdate
 User : [...]
 
-BookingCatSitter _- User : catSitter
-BookingCatSitter _- User : catIndividual
-User -\* AvailabilityCatSitter : catSitter
+BookingCatSitter -> User : catSitter
+BookingCatSitter -> User : catIndividual
+User -* AvailabilityCatSitter : catSitter
 
 @enduml
 
@@ -2620,9 +2619,9 @@ User : [...]
 BookingCatSitterRepository ..> BookingCatSitter
 AvailabilityCatSitterRepository..> AvailabilityCatSitter
 UserRepository ..> User
-BookingCatSitter _- User : catSitter
-BookingCatSitter _- User : catIndividual
-User -\* AvailabilityCatSitter : catSitter
+BookingCatSitter -> User : catSitter
+BookingCatSitter -> User : catIndividual
+User -* AvailabilityCatSitter : catSitter
 
 @enduml
 

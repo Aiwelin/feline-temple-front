@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>APICHARD - Le temple félidé.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="glossaire">Glossaire</h1>
+<ul>
+<li><a href="#Cybersquattage">Cybersquattage</a> : Pratique consistant à occuper des noms de domaine correspondant à un domaine déjà existant pour plusieurs raisons : profiter de sa notoriété</li>
+<li><a href="#Framework">Framework</a> : Ensemble de composant logiciels ou outils formant une bibliothèque.</li>
+<li><a href="#JPA">JPA</a> : Java Persistence API. C'est une interface permettant d'organisée des données relationnelles.</li>
+<li><a href="#Responsive">Responsive</a> : Technique de conception de pages qui fait en sorte que l’affichage s'adapte automatiquement aux différents appareils (mobile / tablette / site web).</li>
+<li><a href="#SPA">SPA</a> : Single Pages Application en anglais. Cela signifie qu'une seule page web est accessible et la moindre action utilisateur est récupérée et affichée dynamiquement.</li>
+<li><a href="#URL">URL</a> : Uniform Resource Locator en anglais. Cela correspond à la localisation d'une page d'un site web.</li>
+</ul>
+<h1 id="sommaire">Sommaire</h1>
+<ol>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#expression">Expression des besoins</a>
+<ol>
+<li><a href="#expression_presentation">Présentation</a></li>
+<li><a href="#expression_acteurs">Les acteurs</a></li>
+<li><a href="#expression_cas_utilisations">Cas d’utilisations</a></li>
+<li><a href="#expression_lots">Lots non réalisés dans ce besoin</a></li>
+</ol>
+</li>
+<li><a href="#analyse">Analyse des besoins</a>
+<ol>
+<li><a href="#analyse_cas_utilisations">Cas d’utilisations</a></li>
+<li><a href="#analyse_regroupement_classes">Regroupement des classes</a></li>
+</ol>
+</li>
+<li><a href="#conception">Conception</a>
+<ol>
+<li><a href="#conception_architecture">Architecture</a></li>
+<li><a href="#conception_technologies">Choix technlogiques</a></li>
+<li><a href="#conception_cas_utilisation">Cas d’utilisations</a></li>
+</ol>
+</li>
+<li><a href="#bibliographie">Bibliographies</a></li>
+</ol>
+<div style="page-break-after: always;"></div>
+<h1 id="introduction-a-name%22introduction%22a">Introduction <a name="introduction"></a></h1>
+<p>Dans le cadre de l'unité d'enseignement GLG204 - Architectures Logicielles Java niveau 2, il y a une réalisation d'un projet, ainsi que sa soutenance. Ce dernier a pour objectifs de mettre à l'épreuve mes compétences acquises lors de cette formation d'ingénieur, ainsi que mes capacités d'analyses et de prise de recul.</p>
+<p>Ce projet s'inscrit pour ma part sur une fin d'études du diplôme d'ingénieur en informatique : Architecture et intégration des systèmes et des logiciels (CYC9101A). La société décrite dans ce projet est une société fictive dont les besoins ont été imaginés par mes soins.</p>
+<p>Dans un premier temps, nous allons définir l'expression des besoins de la société &quot;Temple Félidé&quot;. Sur la base de cette expression, nous effectuerons l'analyse de ses besoins, puis nous déterminerons l'architecture et les technologies à mettre en place.</p>
+<div style="page-break-after: always;"></div>
+<h1 id="expression-des-besoins-a-name%22expression%22a">Expression des besoins <a name="expression"></a></h1>
+<p>Les objectifs de cette section sont de décrire les besoins du Temple Félidé, en établissant les critères de sélection, en favorisant l'aspect concurrentiel et en facilitant la prise de décision. Ces objectifs sont essentiels pour aider l'entreprise à trouver les solutions les mieux adaptées à ses besoins et à ses contraintes, afin de toucher le plus de clients potentiels.</p>
+<p>Pour ce faire, nous allons présenter le projet, la société, ainsi que ses acteurs. Nous décrirons les besoins au travers de diagrammes de cas d'utilisation.</p>
+<h2 id="2-pr%C3%A9sentation-a-name%22expressionpresentation%22a">2. Présentation <a name="expression_presentation"></a></h2>
+<h3 id="21-pr%C3%A9sentation-du-projet">2.1 Présentation du projet</h3>
+<p>Le Temple félidé souhaite mettre en place un site <a name="Responsive">responsive</a> de garde de chats. Ce site permettrait de mettre en relation des particuliers, souhaitant faire garder leurs animaux soit par des particuliers amoureux d'animaux ou par des professionnels formés.</p>
+<h3 id="22-situation-actuelle">2.2 Situation actuelle</h3>
+<p>La société ne possède actuellement aucun site et fonctionne par le bouche-à-oreille, ainsi que sur papier.</p>
+<h3 id="23-les-contraintes">2.3 Les contraintes</h3>
+<ul>
+<li>Le site doit également être consultable en mobile au vu des usages actuels</li>
+<li>Le site doit être plaisant et centrer autour de la réservation</li>
+</ul>
+<h3 id="24-pr%C3%A9sentation-de-la-soci%C3%A9t%C3%A9">2.4 Présentation de la société</h3>
+<p>La société le Temple félidé est une garderie professionnelle dédié aux chats. Le personnel de l'entreprise ont tous une formation d'assistant vétérinaire et sont passionnés par les félins. Les espaces intérieurs et extérieurs sont aménagés et pensés pour le plaisir et le confort de nos amis les chats. Les chambres individuelles et familiales sont imaginés pour satisfaire les félins les plus exigeant.
+Le gérant souhaitait mettre en place un site pour faciliter les réservations et passer sur un planning en ligne.</p>
+<p>Il a commencé à élaborer une réflexion autour de son besoin avec l'entreprise (Nous) acceptant de réaliser son site. Dans sa réflexion, il a pris en compte que leur garderie est souvent complète à certaines périodes. De nombreux particuliers se retrouvant sans solution pour faire garder leurs chats. Après réflexion ils se sont dit que créer un site qui mettrait en relation des particulier et des professionnels permettrait de résoudre cette problématique ainsi que celle de la réservation et du planning. Cela permet également de générer des partenariats privilégiés. De plus, il souhaite mettre en avant l'intérêt de passer par un professionnel formé et possédant des espaces adaptés pour accueillir des chats. Le gérant imaginait aussi ajouter de nombreuses fonctionnalités par la suite et ainsi lotir son besoin.</p>
+<!-- Mélange avec l'analyse ? A voir comment goupiller les choses -->
+<div style="page-break-after: always;"></div>
+<h2 id="3-les-acteurs-a-name%22expressionacteurs%22a">3. Les acteurs <a name="expression_acteurs"></a></h2>
+<ul>
+<li>Le particulier souhaitant faire garder son/ses chat(s) sera nommé : CatIndividual</li>
+<li>Le particulier proposant de garder un ou plusieurs chats sera nommé : CatSitter</li>
+<li>Le professionnel sera nommé : CatSitterPro</li>
+</ul>
+<img src="http://www.plantuml.com/plantuml/svg/NOvB2i9040NtSug6kKX0KDo842_GJ9xIP3wXfoSIWdTtS1Dm_QgADrHZjPQYgxFaXPKJSR2YesqHn6_Kak0M3ZE_GFSEIsXHeBlxSNHYk-P9LfaQH_BdegXsKI0Vm2XcKF8FS7GVT-IqF56hb9mHQVyN-ap-nklMdG5vwZU_" alt="uml diagram">
+<div style="page-break-after: always;"></div>
+<h2 id="4-cas-dutilisations-a-name%22expressioncasutilisations%22a">4. Cas d’utilisations <a name="expression_cas_utilisations"></a></h2>
+<ol>
+<li><a href="#expression_besoin_reservation_particulier">Réservation d'un particulier</a>
+<ol>
+<li><a href="#expression_besoin_reservation_particulier_cas1">Réserver une garde de mon chat auprès d'un particulier ou d'un professionnel</a></li>
+<li><a href="#expression_besoin_reservation_particulier_cas2">Consulter ma réservation</a></li>
+<li><a href="#expression_besoin_reservation_particulier_cas3">Annuler ma réservation</a></li>
+</ol>
+</li>
+<li><a href="#expression_besoin_gestion_catsitter">Gestion d'un CatSitter</a>
+<ol>
+<li><a href="#expression_besoin_gestion_catsitter_cas1">Donner mes disponibilités de gardes</a></li>
+<li><a href="#expression_besoin_gestion_catsitter_cas2">Consulter mon planning de réservation</a></li>
+</ol>
+</li>
+<li><a href="#expression_besoin_gestion_compte">Gestion d'un compte</a>
+<ol>
+<li><a href="#expression_besoin_gestion_compte_cas1">Créer mon compte</a></li>
+<li><a href="#expression_besoin_gestion_compte_cas2">Se connecter</a></li>
+<li><a href="#expression_besoin_gestion_compte_cas3">Se déconnecter</a></li>
+<li><a href="#expression_besoin_gestion_compte_cas4">Modifier mon profil</a></li>
+</ol>
+</li>
+</ol>
+<h3 id="41-r%C3%A9servation-dun-particulier-a-name%22expressionbesoinreservationparticulier%22a">4.1 Réservation d'un particulier <a name="expression_besoin_reservation_particulier"></a></h3>
+<div style="text-align: center;">
+<img src="http://www.plantuml.com/plantuml/svg/dPJTRXen48Nl_HIZpJMq8GAXDa8X6qYGgWJnqtkpdX8BOw_6NgeewlkKvzWNgytlRa88vNBjxyoSERFoZNMSN3PNZ2dyvS0P83bzTY0aOUAaqOpPcTGf9pu7dZX3G_UY4FXlj6QEXSlCOi8jmYkxvSbiIYRJ8ZRAqFLrUpnww3oEUjrUt1xrdXvRBUXf8RaUe7XF3ph3pk3d5hpZD7iYhgV8_Z2MUfXF4VhUjKmo9P5UsSeMnDo5eWifCgxWeci8hRidHEs5QoJop50wXzGd0rzWzna1jr2yP6mxJjJdBqYWE52-j4WB7b81dgMK_xKWSAKTnrzP2CpxzE54lWx23uGHpbF_tSsNIefy6VbmTXDa4oKJVx1hD4H8ZDQ-oiRGEBw4G-7j9R7HDbCk-4DRCkYTIPiQBIV-PbEjLagGv29VOj70OAttrTvDruGtUodPzgEzTNvroAGjXxX1wtkqhNMcFWGRth-VeBpeIgNI2l73XP8QlnNM_ZqSL2T62HRkLs3f1pYcEDpbyWnDxHDdDLXppJDgNvsXgH_L79GqZhS9tlyptM2zMgqMCzsz26jESFkC8P_wgM3ZLB1v6bZilLtE_ZNwgFad9Bj1BVnx-my0" alt="uml diagram">
+</div>
+<h4 id="411-r%C3%A9server-une-garde-de-mon-chat-aupr%C3%A8s-dun-particulier-ou-dun-professionnel-a-name%22expressionbesoinreservationparticuliercas1%22a">4.1.1 Réserver une garde de mon chat auprès d'un particulier ou d'un professionnel <a name="expression_besoin_reservation_particulier_cas1"></a></h4>
+<h5 id="r%C3%A9sum%C3%A9">Résumé</h5>
+<p>Le particulier souhaite faire garder son animal et pour ce faire sélectionne un particulier ou un professionnel sur le créneau de son choix. Puis il s'authentifie, afin de finaliser la réservation du créneau préalablement sélectionné.</p>
+<h5 id="acteurs">Acteurs</h5>
+<ul>
+<li>Le particulier (CatIndividual)</li>
+<li>Le particulier proposant du gardiennage (CatSitter)</li>
+<li>Le professionnel (CatSitterPro)</li>
+</ul>
+<h5 id="pr%C3%A9-conditions">Pré-conditions</h5>
+<ul>
+<li>Le particulier doit avoir un compte.</li>
+<li>Le particulier et le professionnel proposant leurs services de garde doivent obligatoirement avoir créé un compte et donner leurs disponibilités au préalable.
+Dans les deux cas, se référer au cas d’utilisation « Gestion d'un compte ».</li>
+</ul>
+<h5 id="description">Description</h5>
+<ol>
+<li>Le particulier consulte les réservations</li>
+<li>Le particulier sélectionne un créneaux disponible correspondant à un particulier ou à un professionnel</li>
+<li>Il s'authentifie avec son login et son mot de passe</li>
+<li>Il est redirigé vers sa réservation et la confirme</li>
+<li>La réservation est effective</li>
+</ol>
+<h5 id="exceptions">Exceptions</h5>
+<p><strong>L'utilisateur ne s'authentifie pas :</strong> Les données renseignées sont incorrectes et ne permettent pas de s'authentifier.</p>
+<p><strong>La réservation est de 1 jour minimum :</strong> La plage de date choisie doit s'étaler sur au minimum 1 jour.</p>
+<p><strong>La date choisie est antérieur à la date du jour:</strong> La réservation doit explicitement être faite dans le futur.</p>
+<p><strong>La date choisie ne peut être supérieur à 1 an:</strong> La réservation ne peut se faire au dela d'une année.</p>
+<p><strong>Le créneau n'existe plus :</strong> Une autre personne a reservé le créneau avant l'utilisateur courant.</p>
+<h5 id="post-conditions">Post-conditions</h5>
+<p>La réservation est confirmée.</p>
+<h5 id="diagramme-dactivit%C3%A9">Diagramme d'activité</h5>
+<img src="http://www.plantuml.com/plantuml/svg/HOt13O0m30F_dQ8_TcW_I6m04rGbY4XjYjA4dPY3nOZWmS_ssVBO9R5eBUuLBaoDkXO1zWMwv_lgm6SIj3YwC7_Ug9BFHWcIMhuCIMK74jmG-2--GvyRRSZrlY3QJJlS2BJQvmC0" alt="uml diagram">
+<h4 id="412-consulter-ma-r%C3%A9servation-a-name%22expressionbesoinreservationparticuliercas2%22a">4.1.2 Consulter ma réservation <a name="expression_besoin_reservation_particulier_cas2"></a></h4>
+<h5 id="r%C3%A9sum%C3%A9">Résumé</h5>
+<p>Le particulier souhaite consulter sa réservation afin de vérifier des informations ou les dates choisies.</p>
+<h5 id="acteurs">Acteurs</h5>
+<ul>
+<li>Le particulier (CatIndividual)</li>
+</ul>
+<h5 id="pr%C3%A9-conditions">Pré-conditions</h5>
+<ul>
+<li>Le particulier doit être authentifié.</li>
+<li>Le particulier doit avoir un compte.</li>
+<li>Le particulier doit avoir effectué une réservation au préalable.</li>
+</ul>
+<h5 id="description">Description</h5>
+<ol>
+<li>Le particulier clique sur son icône de profil</li>
+<li>Il clique sur le menu &quot;Mes réservations&quot;</li>
+<li>Il accède à ses créneaux réservés</li>
+</ol>
+<h5 id="exceptions">Exceptions</h5>
+<p><strong>Le particulier ne s'est pas authentifié :</strong> Le menu lui permettant de consulter les réservations n'est pas visible en tant qu'anonyme</p>
+<p><strong>Le particulier n'a effectué aucune réservation :</strong> La page lui indique qu'il n'a aucune réservation en cours.</p>
+<h5 id="post-conditions">Post-conditions</h5>
+<p>Le particulier a pu voir les informations concernant sa réservation.</p>
+<h5 id="remarques">Remarques</h5>
+<p>Le particulier peut voir en dessous de sa réservation en cours ou s'il n'a aucune réservation, l'historique de ses réservations passées.</p>
+<h5 id="diagramme-dactivit%C3%A9">Diagramme d'activité</h5>
+<img src="http://www.plantuml.com/plantuml/svg/SoWkIImgAStDuG8pkAnyKuiLYWwlB4ujAaiioSpFi-Qo2iiiBatCoIm6ynLIKXLo4j6K59Va5t0vfEQb00q20000" alt="uml diagram">
+<h4 id="413-annuler-ma-r%C3%A9servation-a-name%22expressionbesoinreservationparticuliercas3%22a">4.1.3 Annuler ma réservation <a name="expression_besoin_reservation_particulier_cas3"></a></h4>
+<h5 id="r%C3%A9sum%C3%A9">Résumé</h5>
+<p>Le particulier souhaite pour des raisons personnelles annuler sa réservation. En rebond de cette annulation, une notification doit être envoyé à l'utilisateur qui effectuait le gardiennage de l'animal.</p>
+<h5 id="acteurs">Acteurs</h5>
+<ul>
+<li>Le particulier (CatIndividual)</li>
+<li>Le particulier proposant du gardiennage (CatSitter)</li>
+<li>Le professionnel (CatSitterPro)</li>
+</ul>
+<h5 id="pr%C3%A9-conditions">Pré-conditions</h5>
+<ul>
+<li>Le particulier doit être authentifié.</li>
+<li>Le particulier doit avoir un compte.</li>
+<li>Le particulier doit avoir effectué une réservation au préalable.</li>
+</ul>
+<h5 id="description">Description</h5>
+<ol>
+<li>Le particulier clique sur son icône de profil</li>
+<li>Il clique sur le menu &quot;Mes réservations&quot;</li>
+<li>Il accède à ses créneaux réservés</li>
+<li>Il sélectionne le créneau à annuler</li>
+<li>Il annule la réservation</li>
+<li>La réservation n'est plus visible dans son espace</li>
+<li>Une notification d'annulation est envoyée au professionnel ou au particulier devant garder l'animal</li>
+</ol>
+<h5 id="exceptions">Exceptions</h5>
+<p><strong>Le particulier ne s'est pas authentifié :</strong> Le menu lui permettant de consulter les réservations n'est pas visible en tant qu'anonyme</p>
+<p><strong>Le particulier n'a effectué aucune réservation :</strong> La page lui indique qu'il n'a aucune réservation en cours.</p>
+<h5 id="post-conditions">Post-conditions</h5>
+<p>Le particulier a pu annuler sa réservation.</p>
+<h5 id="diagramme-dactivit%C3%A9">Diagramme d'activité</h5>
+<img src="http://www.plantuml.com/plantuml/svg/SoWkIImgAStDuG8pkAnyKuiLYWwlB4ujAaiioSpFi-Qo2iiiBatCoIm6ynLIKXLo4j6LEERbbUQa5YaKeyiKb-GNS3cavgK0hG00" alt="uml diagram">
+<div style="page-break-after: always;"></div>
+<h3 id="42-gestion-dun-catsitter-a-name%22expressionbesoingestioncatsitter%22a">4.2 Gestion d'un CatSitter <a name="expression_besoin_gestion_catsitter"></a></h3>
+<img src="http://www.plantuml.com/plantuml/svg/ZPFTJkCm48Nl_HIZSDsY2gHA2whAXgAjj0keJRcVnjCmgcD7jiCAhVQ1-XnzCSQ1_WYuw9rZVtFcdB4p3X5zR6kZ3AqYH0UUg-S8cZsLaPrLAgpPDkYn1YoZy_FuQWZmBmLNqz5X6wZ4GF1F_SHoNNdNMfqxu_przSsY-3MvBwPtq_occ3xSZqOmjPhHpaX_fMUJ-MJsj0DlqQyVFDgAr7-bEWUGvHZd72DvE8Vz-j6x330SDk2i83HAfIGY8AupEI3uJL1GtSZttNPZM6ytcRXkn0TM18_jqd0f6xj0sPoWTDQA2lckmo8Vm7UfaiEzZEUNxOO-wKYlpr8N1-2FqxnYCLux2urtApOVqEKUMkJ3j9NbpeRMn1riq5gsbT84Vhi9v5ymtLvsL3SOT8MtgRzKKP1B3espl6J3KOfISOLUKyWaYMGvJBBNwusws6U6BVr8SxrAg_xI6VsLkpYHkpoH6txFgTIft-yVMzi_h7TEOtYMHvPQdGWEJmCxoTrO1cfCLijVz0O0" alt="uml diagram">
+<h4 id="421-donner-mes-disponibilit%C3%A9s-de-gardes-a-name%22expressionbesoingestioncatsittercas1%22a">4.2.1 Donner mes disponibilités de gardes <a name="expression_besoin_gestion_catsitter_cas1"></a></h4>
+<img src="http://www.plantuml.com/plantuml/svg/RP91JiCm44NtFiKeNJUe4YkegfP0HIGe5KqFuCRJT5J7Zcm7X107oZboCIQXf5rqPyzy_V_6uxaFqeMwr4BZFa2muAWu153aC0zaZH3-IAQIJfOWys3T9dnf1Fc9tfPuqQmzvj8ZV8i7cHyBPskZ4gkjcquNs-pvQPMbopHPPEdRQZQ3r2YIvXsL-16YzuKeaM538Q236nZEQsSZaFvSW566KWlHyKbJC4l43OGNX0pBYk_Bjj6asYPYbefPP86mhdUQSYxyOqORXDmQmoxe-eHjCe5hh1tXOEFeestmqkVLAjeJSvNMGENidlJ9xdOGiVMagqMFNI9BqVCB-yeQsf6cq3PUA8H2EeK-ua2EF0yy7ezddHsCD1cywyQ_xqxnpcebkiP9mI5N9RqcZkDUSv8C2_ZJAUaFl0mnHwFuD_m2" alt="uml diagram">
+<h5 id="r%C3%A9sum%C3%A9">Résumé</h5>
+<p>Un utilisateur connecté peut indiquer les plages de jours où il est disponible pour garder des félins.</p>
+<h5 id="acteurs">Acteurs</h5>
+<ul>
+<li>Le particulier proposant du gardiennage (CatSitter)</li>
+<li>Le professionnel (CatSitterPro)</li>
+</ul>
+<h5 id="pr%C3%A9-conditions">Pré-conditions</h5>
+<ul>
+<li>L'utilisateur doit avoir un compte</li>
+<li>L'utilisateur doit être connecté</li>
+</ul>
+<h5 id="description">Description</h5>
+<ol>
+<li>L'utilisateur clique sur le menu &quot;Modifier mon profil&quot;</li>
+<li>il se rend sur la page d'authentification</li>
+<li>Il fournit son identifiant et son mot de passe</li>
+<li>Le système vérifie la concordance des données rentrées et attendues</li>
+<li>L'utilisateur est redirigé vers la page &quot;Mon profil&quot; en étant connecté</li>
+<li>Il a un encart dédié à l'ajout de ses disponibilités avec un planning</li>
+<li>Il remplit ses disponibilités</li>
+</ol>
+<h5 id="exceptions">Exceptions</h5>
+<p><strong>Donner une disponibilité en doublon :</strong> Si l'utilisateur a déjà donné cette disponibilité, alors un message d'alerte s'affiche pour doublon et l'oblige à changer sa saisie</p>
+<p><strong>Se rendre indisponible sur un créneau déjà réservé :</strong> L'utilisateur avait renseigné au préalable sa disponibilité et un particulier a réservé ce créneau. Une notification lui indique une réservation en cours sur cette plage et lui demande confirmation quant à son annulation. L'utilisateur peut soit confirmer la suppression de cette réservation et le particulier sera notifié par mail, soit ne rien faire et garder le créneau disponible.</p>
+<h5 id="post-conditions">Post-conditions</h5>
+<p>Son planning est mis à jour et permet la réservation d'un particulier</p>
+<h5 id="diagramme-dactivit%C3%A9">Diagramme d'activité</h5>
+<img src="http://www.plantuml.com/plantuml/svg/SoWkIImgAStDuG8pkAnyyrCoqp9JYnHoy_CK2ehoqp9ph954YrEB5L8oYmloypAJCdCoImwlB0PA1u3LAUHc5YiSNg2GbLzQP0qqBx-0oo4rBmLeE000" alt="uml diagram">
+<h4 id="422-consulter-mon-planning-de-r%C3%A9servation-a-name%22expressionbesoingestioncatsittercas2%22a">4.2.2 Consulter mon planning de réservation <a name="expression_besoin_gestion_catsitter_cas2"></a></h4>
+<img src="http://www.plantuml.com/plantuml/svg/RP71Ri8m343l-GghdEcqqwGDLR1gQ9KcXaRv0DDu9I9rgYHbcgPzKB-ZFxQaQC21csCxBy_Et7cqlckqqFJfmHkmgjvxaCfIvPLX8Tn1SOiM6y3A6xlntve0lyYPXgwAdQCA7S6FUCRgK5lJiSoDDdOsMspBrvTLMIoBV54MxwiiWuAbGluWANw56BcGvEWtodkoS0VdU6rD0kWk2PYKX5g8w8TS1vSa50ZU24fgsd1U3hrMSkYJuD865wm9rjrEgoea_ZMJ3K5bc0E5xFZ2Dh-7MwxHy8onwZZqTCNPvW_nSf8RTfsEVerXQ3KoAww59B13xyWUCMup2R20kmmpdKwpaJ7HYkanZlOKetHdj1GYLj8qpKQvKyjvSwS-YMuVjZWdbk4N_m00" alt="uml diagram">
+<h5 id="r%C3%A9sum%C3%A9">Résumé</h5>
+<p>Un utilisateur connecté peut consulter son planning de réservation et voir les jours où il effectuera des gardes et pour quel animal ainsi que le propriétaire.</p>
+<h5 id="acteurs">Acteurs</h5>
+<ul>
+<li>Le particulier proposant du gardiennage (CatSitter)</li>
+<li>Le professionnel (CatSitterPro)</li>
+</ul>
+<h5 id="pr%C3%A9-conditions">Pré-conditions</h5>
+<ul>
+<li>L'utilisateur doit avoir un compte</li>
+<li>L'utilisateur doit être connecté</li>
+<li>L'utilisateur doit avoir rempli ses disponibilités de gardes</li>
+</ul>
+<h5 id="description">Description</h5>
+<ol>
+<li>L'utilisateur clique sur le menu &quot;Mon planning&quot;</li>
+<li>il se rend sur la page d'authentification</li>
+<li>Il fournit son identifiant et son mot de passe</li>
+<li>Le système vérifie la concordance des données rentrées et attendues</li>
+<li>L'utilisateur est redirigé vers la page &quot;Mon planning&quot; en étant connecté</li>
+<li>Il consulte son planning de réservation</li>
+</ol>
+<h5 id="exceptions">Exceptions</h5>
+<p><strong>L'utilisateur n'a pas rempli ses disponibilités :</strong> Un texte lui indique qu'il ne propose pas ses services de gardiennage et lui propose s'il le souhaite d'être redirigé vers la page dédié à l'ajout de ses disponibilités.</p>
+<h5 id="post-conditions">Post-conditions</h5>
+<p>Il consulte son planning de réservation</p>
+<h5 id="diagramme-dactivit%C3%A9">Diagramme d'activité</h5>
+<img src="http://www.plantuml.com/plantuml/svg/SoWkIImgAStDuG8pkAoSy_EAItDAKeiKSlFp50fo4lFoClFI5L9I5OeEhonEBIfBBCdCpxFciWhBB2vDpCai1lCLKahXQgs1HkKNS3cavgK0pGK0" alt="uml diagram">
+<div style="page-break-after: always;"></div>
+<h3 id="43-gestion-dun-compte-a-name%22expressionbesoingestioncompte%22a">4.3 Gestion d'un compte <a name="expression_besoin_gestion_compte"></a></h3>
+<img src="http://www.plantuml.com/plantuml/svg/bPHDRjim48NtFCL0NcHbru6zIHiOIHKxCT0cWQrqpuXZXp152aCgHL7qG3w7BzQXQrkAyuDg9v4Vtxptz7FXWwHG5KOON0G83aWldm8eJPW7xQmGVgLjAKaM8FFWQ1v-6GJv4xqhiB5PUSobH_WjlifyjIHNMPKwu-Zy_F8XkndVPjF9DBtCfdUten5ChTBIpb2zfcVZ-NZsOmzUILhTaRHB57-4s3g0L8Pu_bchIXheJ1oX3zU4Q7T0miHSXu04d-1mVKyk0Udh1UXaA8qGCIfFu5W9Ro1yGyYmAFb-ibaRhJRhX6ELR5Gk4UwhHwDpNjWdJkO8kREMLP2s4nxIKtWhTdqaTTPN9dhWAIMvXJQWJYgxEtxM86cpPgnmbeSKPS3zX7uiv62Az3DpHwxO-R6nGGryTqelz4xxduSTD6Hf5d_PSxVR7MsJTOos-BdH-fUuq7jqHecwsoCyDjtWtjOUjDCUjD4UjjCUjj4--r0xxlTwlL7pnJlILj8_uNlgf_sMbVVVyHuRsngf7ylXEtpX8yR_Br14O4_snGLQnV-Ilm00" alt="uml diagram">
+<h4 id="423-cr%C3%A9er-mon-compte-a-name%22expressionbesoingestioncomptecas1%22a">4.2.3 Créer mon compte <a name="expression_besoin_gestion_compte_cas1"></a></h4>
+<h5 id="r%C3%A9sum%C3%A9">Résumé</h5>
+<p>Permet à un utilisateur de créer son compte sur le site.</p>
+<h5 id="acteurs">Acteurs</h5>
+<p>Tous les acteurs du site.</p>
+<h5 id="pr%C3%A9-conditions-%E2%9D%8C">Pré-conditions ❌</h5>
+<h5 id="description">Description</h5>
+<ol>
+<li>L'utilisateur se rend sur la page d'authentification</li>
+<li>L'utilisateur clique sur le bouton création de compte</li>
+<li>Il est redirigé vers la page de création de compte</li>
+<li>Si c'est un professionnel il clique sur la case à cocher correspondante</li>
+<li>Il rentre son numéro de siret</li>
+<li>Il rentre toutes les informations obligatoires et facultatives s'il le souhaite</li>
+<li>Le système vérifie le format des données et sauvegarde le compte</li>
+<li>L'utilisateur est redirigé vers la page d'authentification en lui indiquant que son compte a bien été créer et l'invite à se connecter</li>
+</ol>
+<h5 id="exceptions">Exceptions</h5>
+<p><strong>Utilisateur déjà connu :</strong> L'utilisateur renseigne toutes ses données et le système constate que l'identifiant est déjà connu. L'utilisateur est prévenu qu'un email lui a été envoyé et il s'agit du même mail que celui de la réinitialisation du mot de passe, afin d'éviter de donner une information à un potentiel attaquant.</p>
+<p><strong>Les données ne sont pas au bon format :</strong> Les informations renseignés par l'utilisateur sont incorrecte, il peut modifier ses informations et relancer la création de son compte.</p>
+<h5 id="post-conditions">Post-conditions</h5>
+<p>L'utilisateur a désormais un compte.</p>
+<h5 id="diagramme-dactivit%C3%A9">Diagramme d'activité</h5>
+<img src="http://www.plantuml.com/plantuml/svg/FO_B3OCm38RlcS97o0ZqWjGDke6LkDHI7YXEQ4SgSsIn6bHni_pP_sEMYgMs6CmvcEb1IOYNH0K22N1wvXAnSau2gU-EH90BoSsyNnm8XeEtSEn0Seii8x30u7FIyrDXmy2UP3IK_F_feXURxZckbS2LllSTS2C7qfphNxNIL5uDt143DYe20M75XS0JMEjKZJxAhBrfZxoQMQsqr0y0" alt="uml diagram">
+<h4 id="424-se-connecter-a-name%22expressionbesoingestioncomptecas2%22a">4.2.4 Se connecter <a name="expression_besoin_gestion_compte_cas2"></a></h4>
+<h5 id="r%C3%A9sum%C3%A9">Résumé</h5>
+<p>Permet à un utilisateur de s'authentifier sur le site.</p>
+<h5 id="acteurs">Acteurs</h5>
+<p>Tous les acteurs du site.</p>
+<h5 id="pr%C3%A9-conditions">Pré-conditions</h5>
+<p>L'utilisateur doit avoir un compte sur le site</p>
+<h5 id="description">Description</h5>
+<ol>
+<li>L'utilisateur se rend sur la page d'authentification</li>
+<li>L'utilisateur fournit son identifiant et son mot de passe</li>
+<li>Le système vérifie la concordance des données rentrées et attendues</li>
+<li>L'utilisateur est redirigé vers la page qu'il souhaitait accéder en étant connecté</li>
+</ol>
+<h5 id="exceptions">Exceptions</h5>
+<p><strong>L'identifiant ou le mot de passe sont mal renseignés :</strong> Les informations renseignés par l'utilisateur sont incorrectes, il peut modifier ses informations et relancer l'authentification</p>
+<p><strong>L'utilisateur a effectué trois tentatives de connexions infructueuses :</strong> Le nombre de tentatives de connexion a verrouillé l'utilisateur. Le système lui indique de procéder à la récupération de son compte en passant par mot de passe oublié ou attendre que son compte se déverrouille.</p>
+<p><strong>Utilisateur non connu :</strong> Soit l'utilisateur constate qu'il ne peut se connecter, car il n'a pas créé de compte, il peut alors effectuer la création. Sinon l'utilisateur effectue les trois tentatives infructueuses et on lui indique le même message malgré qu'il n'existe pas.</p>
+<h5 id="post-conditions">Post-conditions</h5>
+<p>L'utilisateur est authentifié.</p>
+<h5 id="remarques">Remarques</h5>
+<p>Si l'utilisateur n'existe pas, pour éviter de donner une information à une personne malintentionnée on indique à l'utilisateur d'effectuer la démarche &quot;mot de passe oublié&quot;.</p>
+<h5 id="diagramme-dactivit%C3%A9">Diagramme d'activité</h5>
+<img src="http://www.plantuml.com/plantuml/svg/RP0nRiCm34Ltd-9FZUsbGxO6A7A0TiaD58ks2SYKAr7kaWlv7BvOwBO8Mg20G0WI-V_ZFsTrISiKggzBzN8XoSI3K48ui2THxjc9WXI1C4M59ymkPpfLdoFRM_qM1vRdzrzV3JYZzb5aMoc3PN71n79JSOzQudHD13LnfxmGNd74xOQY73WxfP9ifBFfWYVyrzr0HnBKc5FijjMNz1SDiLm3RoiQsolE5OddVgy_n0-o1vSjxZbHfnm52wMCu4nh87oK0mVaM4R7QWUksoqfcHwsLVTmsjQLdMWFQrlRzlHjUpP7o_OE" alt="uml diagram">
+<h4 id="425-se-d%C3%A9connecter-a-name%22expressionbesoingestioncomptecas3%22a">4.2.5 Se déconnecter <a name="expression_besoin_gestion_compte_cas3"></a></h4>
+<h5 id="r%C3%A9sum%C3%A9">Résumé</h5>
+<p>Permet à un utilisateur de se déconnecter du site.</p>
+<h5 id="acteurs">Acteurs</h5>
+<p>Tous les acteurs du site.</p>
+<h5 id="pr%C3%A9-conditions">Pré-conditions</h5>
+<p>L'utilisateur doit s'être authentifié auparavant.</p>
+<h5 id="description">Description</h5>
+<ol>
+<li>L'utilisateur clique sur son profil</li>
+<li>L'utilisateur clique sur le menu &quot;Se déconnecter&quot;</li>
+<li>L'utilisateur est redirigé vers la page d'accueil sans être authentifié</li>
+</ol>
+<h5 id="post-conditions">Post-conditions</h5>
+<p>L'utilisateur est déconnecté.</p>
+<h5 id="diagramme-dactivit%C3%A9">Diagramme d'activité</h5>
+<img src="http://www.plantuml.com/plantuml/svg/7Son2O0m44RX_gQuJiW8sZY3Jd0aFn98BY4v1KTo3XSps7t5uwtTfDcP4_sWUGU7z_555TwmqBmXn3OSY_A5rZa9Lpb6Dedt9s8YAB-FYHex9rhqpd1k6STIQOM6iVy0" alt="uml diagram">
+<h4 id="426-modifier-mon-profil-a-name%22expressionbesoingestioncomptecas4%22a">4.2.6 Modifier mon profil <a name="expression_besoin_gestion_compte_cas4"></a></h4>
+<h5 id="r%C3%A9sum%C3%A9">Résumé</h5>
+<p>Permet à un utilisateur de modifier son profil sur le site</p>
+<h5 id="acteurs">Acteurs</h5>
+<p>Tous les acteurs du site.</p>
+<h5 id="pr%C3%A9-conditions">Pré-conditions</h5>
+<p>L'utilisateur doit s'être authentifié auparavant.</p>
+<h5 id="description">Description</h5>
+<ol>
+<li>L'utilisateur clique sur son profil</li>
+<li>Il clique sur le menu &quot;Modifier son profil&quot;</li>
+<li>Il est redirigé vers la page de son profil en modification</li>
+<li>Il modifie les données qu'il souhaite changer</li>
+<li>Il valide les données changer</li>
+</ol>
+<h5 id="post-conditions">Post-conditions</h5>
+<p>Le profil de l'utilisateur a changé.</p>
+<h5 id="diagramme-dactivit%C3%A9">Diagramme d'activité</h5>
+<img src="http://www.plantuml.com/plantuml/svg/FOwn3OD034LxJ-4ILe26WXQ95P3E1ACx6_c0h9CsSx0OrYcX-_vFp_fTtYVRZnIX16W63Jmp6IOLt4ndZYsy5uw4LQyYrvSo6aacVfMZHivOXJzYEQV8mNiW2J_neGzhnl8QaylN1rSzhFK9ka7dck-v0G00" alt="uml diagram">
+<!---
+## Conclusion
+Est ce utile ?
+-->
+<h3 id="5-lots-non-r%C3%A9alis%C3%A9s-dans-ce-besoin-a-name%22expressionlots%22a">5. Lots non réalisés dans ce besoin <a name="expression_lots"></a></h3>
+<table>
+<thead>
+<tr>
+<th>Numéro de lot</th>
+<th>Description</th>
+<th>Remarques</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lot 2</td>
+<td>Intégration du profil &quot;Mon(Mes) chat(s)&quot;</td>
+<td>Permet au CatSitter/CatSitter d'avoir le profil des animaux et mieux appréhender leurs besoins</td>
+</tr>
+<tr>
+<td>Lot 2</td>
+<td>Intégration des paiements</td>
+<td>Sécuriser les paiments en ligne</td>
+</tr>
+<tr>
+<td>Lot 2</td>
+<td>Intégration des connexions type Google/Facebook</td>
+<td></td>
+</tr>
+<tr>
+<td>Lot 3</td>
+<td>Choix de la chambre / Pièce pour les professionnels</td>
+<td></td>
+</tr>
+<tr>
+<td>Lot 3</td>
+<td>Tarifs en fonction de la date de réservation</td>
+<td>Les dates de vacances scolaires sont généralements plus chères qu'à d'autres périodes</td>
+</tr>
+<tr>
+<td>Lot 3</td>
+<td>Tarifs en fonction du choix de la pièce</td>
+<td>Choisir une pièce plus grande type famille impacte le prix</td>
+</tr>
+<tr>
+<td>Lot 4</td>
+<td>Mise en place des notations entre utilisateurs</td>
+<td></td>
+</tr>
+<tr>
+<td>Lot 5</td>
+<td>Mise à niveau du site en marque blanche</td>
+<td>Vendre le site à d'autres professionnels pour cibler les besoins par localité</td>
+</tr>
+</tbody>
+</table>
+<div style="page-break-after: always;"></div>
+<h1 id="analyse-des-besoins-a-name%22analyse%22a">Analyse des besoins <a name="analyse"></a></h1>
+<p>Dans la section précédente nous avons établi les exigences du Temple Félidé. Nous allons désormais nous concentrer sur l'analyse de ces besoins exprimés. Dans ce cadre, nous allons choisir les cas d'utilisations qui nous paraissent les plus pertinents et en déterminer les diagrammes de classes. En effet, nous obtiendrons ainsi nos principaux objets. Puis par la suite, nous allons modéliser les diagrammes de séquences et obtenir les relations entre chaque élément, ainsi que les comportements des objets.</p>
+<p>Au sein de chaque cas d'utilisation, nous allons déterminer les objets candidats, les interactions entre ces objets, puis décrire les classes correspondantes.</p>
+<p>Au travers de la méthode UML nous allons utiliser les catégories d'objets suivants :</p>
+<ul>
+<li><code>&lt;&lt;Entity&gt;&gt;</code> Objet métier : informations durables et persistantes</li>
+<li><code>&lt;&lt;Boundary&gt;&gt;</code> Objet à la frontière entre le système et un acteur</li>
+<li><code>&lt;&lt;Control&gt;&gt;</code> Objet assurant une coordination d’autres objets (Façade entre objet <code>&lt;&lt;Boundary&gt;&gt;</code> et objet <code>&lt;&lt;Entity&gt;&gt;</code>)</li>
+<li><code>&lt;&lt;Life cycle&gt;&gt;</code> Objet responsable de trouver les objets <code>&lt;&lt;Entity&gt;&gt;</code></li>
+</ul>
+<h2 id="2-cas-dutilisations-a-name%22analysecasutilisations%22a">2. Cas d’utilisations <a name="analyse_cas_utilisations"></a></h2>
+<p>Les cas d'utilisation du Temple Félidé sont rappelés dans le sommaire suivant en précisant ceux qui sont analysés ou non.</p>
+<ul>
+<li>Réservation d'un particulier
+<ul>
+<li><a href="#analyse_reservation">Réserver une garde de mon chat auprès d'un particulier ou d'un professionnel</a> ✅</li>
+<li>Consulter ma réservation ❌</li>
+<li>Annuler ma réservation ❌</li>
+</ul>
+</li>
+<li>Gestion d'un CatSitter
+<ul>
+<li><a href="#analyse_disponibilite">Donner mes disponibilités de gardes</a> ✅</li>
+<li>Consulter mon planning de réservation ❌</li>
+</ul>
+</li>
+<li>Gestion d'un compte
+<ul>
+<li><a href="#analyse_create_account">Créer mon compte</a> ✅</li>
+<li>Se connecter ❌</li>
+<li>Se déconnecter ❌</li>
+<li>Modifier mon profil ❌</li>
+</ul>
+</li>
+</ul>
+<p>Analysé oui : ✅ / Analysé non : ❌</p>
+<div style="page-break-after: always;"></div>
+<h3 id="21-r%C3%A9servation-dun-particulier---r%C3%A9server-une-garde-de-mon-chat-aupr%C3%A8s-dun-particulier-ou-dun-professionnel-a-name%22analysereservation%22a">2.1 Réservation d'un particulier - Réserver une garde de mon chat auprès d'un particulier ou d'un professionnel <a name="analyse_reservation"></a></h3>
+<h4 id="211-liste-des-objets-candidats">2.1.1 Liste des objets candidats</h4>
+<ul>
+<li><code>&lt;&lt;boundary&gt;&gt;</code> BookingCatSitterUI</li>
+<li><code>&lt;&lt;control&gt;&gt;</code> BookingCatSitterService</li>
+<li><code>&lt;&lt;control&gt;&gt;</code> AvailabilityCatSitterService</li>
+<li><code>&lt;&lt;entity&gt;&gt;</code> BookingCatSitter</li>
+<li><code>&lt;&lt;entity&gt;&gt;</code> AvailabilityCatSitter</li>
+<li><code>&lt;&lt;life cycle&gt;&gt;</code> BookingCatSitterRepository</li>
+<li><code>&lt;&lt;life cycle&gt;&gt;</code> AvailabilityCatSitterRepository</li>
+</ul>
+<img src="http://www.plantuml.com/plantuml/svg/XPB1JW8n48RlVOe97ZnvuKm8Qg8XyGJnncNe3ZZIdMxQAMRVI9-35tDsWSGWgqaFa_R_lauddMN5fAKEpYbh85WSlZAbFIf7WUgs23GMO5y2KuAxyxdLHGYsc2e2MxMb_HigO6dIuJF_HcCvxQMuePnDBnHMyi9PEqE6k7udpU1HAgvGitDvns8Ah06znhJKrXh43ygn9jTlmIFgtF9xhWe6m0p5keERfvWewtCY4hUEHIfCBOmcatCzdQxa8KRpRysmP5LAh_DH9pX7d8-YAOOEEvNNgAKDWptrw2asGDxlaGEkER2sV-5ZTnmRDoZQEG9l27ph0mrg5jJ4p3QGjZTrH0_yuxfyp936aTZlw2Tuh0ORwRbZPdoLkhpo1-3SZAIol_WD" alt="uml diagram">
+<h4 id="212-description-des-interactions-entre-objets">2.1.2 Description des interactions entre objets</h4>
+<p>Pour gagner en lisibilité, les diagrammes ont été séparés en 4 étapes. Les trois premières sont ordonnancées par ordre chronologique. Pour la dernière étape, il s'agit d'une sous-partie de l'étape 3.</p>
+<img src="http://www.plantuml.com/plantuml/svg/VLJBJbin4DtxAqQmG8gA1AWhH12qq2eII1M1NJR6dfjCwskdVgJD7v7-HdwiO-V6kO5IAL9yxJDdPiuP-of4wMDgZH2Hea5uMAy2-eMCv2peesHXpW1IoH1wEDwUypfPXAdq6e5_BQFLJ4QGQUxNB-5jg4lTddSDXi3q5it4tf2SUjcsXIMiLpyJMeMSwDlrm-Fe5av5-46MYMGBKaNdnt79PSfV65oBecp1Pnb7LjE2T986P834DSBX5-SnnAyUqOfdbwoMVWa75nVRzUNbn7voZlcdp32c6D4_ZGuomHOYbBFHEvF3kcMEkbv8ClAP3CLb3HspBgImn7VOCx6HWERIninXg45GIsNmNPe7dBj0tDQoCEM84d0cqB97fOFDwbsA4hZ1d0an7CB8KYHfA7I-9fWRQIqt3iEX45ckuylQz3aC1fe2GvPZDKET30u64ylMgpHVh_nR4lREzmP7M1SHN9aItloma_CE0tntoGUUZS1s1v1a0m7R3cnhFe9s_OV7WUDOGvXwoZ3kNVlCcXqdpeA5UVTLCrIZkQ6j2v0xQiZgpkrED8EFCmht39hr-dlnkHIsa3koADFlrzs5NTPgSyt4MNkELM1lRxVCuArB5RdTwFvV4Mfy0zpdgnNraBtulZhbalIyldDIeyzAN3SDyMsUukRAcdB02ITMydWn0HjZZgJtj5Ylyitb-yxtcTTXJubgIg-OMg2G9iAXFcbEr0cCarBvsJY7cptfGvw1N9-pn7u5yQyEUkNk1_CmcVms4SUX2GY7JOCVyHHkUQnLZaoA-wiHuh_wt7hlYZptw1LrxvNXeOdbCTkyY395dX-6Jt5Yyzl8FUViLlT5gCA8ApxXv_Sl" alt="uml diagram">
+<img src="http://www.plantuml.com/plantuml/svg/dLPDR-Cs4BthLmns3sc3Bf04FGMRTDCcBG9iYqNStdnXg94pBKMg_73ZVzFZkd_3VwoFj2HBoMQnBM3853tpvitC6zBlGbG-fjPKLPHecEvssy1-hQ8uI_LHijJ1G7GomfxU3BzZdIpJIlcQ2PyMrlf1HLAfyxkFuRchI_sUTms707ZBPcclHQsyQjk24dRRFnDRpGZquUhkrziREgl27s81f5fIEZg_Y1lGL7znS2rNPOj-KF7MrhAMEYb3Ab02Hthze_CSua-UsLRtBjbQ-GszUljsM5zUBkttpW5_1OI5nCZ-jzjN6M0mgRIpqJkJtVfbzhfQAp7gNep4pUYwG5r4S_7lRS-gVGcaKpPc32CDazvemo_2t77dWY2jJK7A7iNXh6AB7fKCzgiN8OhZtkQigYukQC66TImrBtthZ5gLYjSgSg2lVa7xtBsHbOfEF7zD5nUvj08TS2bcbHzlBiUwdDFnSIYWrp3fYtXylBJJI6jHY9PrqNRpa4jh45O_E7ayiC32JzGNgWE5iHsLCf5UDmr_owTqenzOqpczLpD7GjCps2dzxfAdLgoqgQqE4a0UHI0vYLe2c6rkl7S-ymVMZ6aX6GGlJYA5ezqsAWFVaFpIgZIWzy4gzAX-aUGCBvE4A7PRBmoMkx_9z1Prwh6-bF0i-SAJ7pi3rKLkeGBQ_HCzKwCaWoiBJU4jnVz4Duk6qu0LKZSXVef4_YVR0JOKVa16IMlEbJZAEbNMxhRSqvm66EQh16d4rhq4-t4md8FXhD8W-X6mHMw8R5cbnsTAMrhjFCwApY50BbXfnfCX2QEouNgGvZZf8oNGcmpjQ3ZPEoopyJ2ee-MmqNy_0QpvcU4SRsGqiPpuVwvFxvsgkJJggca4WviBa4zjKtv0G8WU9yo-JEP8UIzhT0XLmloMqd2OLMASt0cPaU1UUVL9Sw9FQ96qpZV7ELtFcXLWJPcViuB6XaygRK9tvlo9lYxjPneBUEj0qPKR3jZV73Bu0DGrZaV27NNGHuTHzQgVYywaGD9spaV4usnPmN8D1qnYI6mmUjzbEViS1i8sKFxJsRjAEX-RGn9VE5e_izVItw86ojyVmljxMgKzEn1UsY7nQKiE1smPjNTuua_1lm00" alt="uml diagram">
+<img src="http://www.plantuml.com/plantuml/svg/dLPDRnit4BtpLn39GQqHkpRQan4RSLqrCE00XjJUTA6vipOHYjpoGwd-JO_HFVzW_rWVkH_QbJQ64K20TidXcvatCu_xmGVXGbnhne8AclYYtdbo6n6KDRoOHSCh62WPjIB7JxjzF4T3_4cuWZX-QrZBPn6uY9Mhl_hZepQsQywMv3tW3UcL-KE99oVMwupYwzq_aOmaE7guMVnrD-U_ClzP6G29DHSoMBSCMuGflf2tQs9vYT-AS6SAjL5559eBpoDYv6__j8vy-EY837kqqHJ2RVcRz--xv-lhbVdTMk0_0M6fGY3tzzsR1D2PC6bDS5QdO-tZrAabA56Iyj7MZ3N9gqgOa4vhLHANMwbf2c11bVKAkMmpHZBEjemCwfAZRfwc3kSZpJPZLrTyIPfao0oZIbowUcT8H2us9FD2Tp0L1Uyzq8Ep_EgA9LOLMe0oZooJUNhTStB9JqvyTj46ijGsd9oipD0lQjJxBT0p2Yzxt9xUlYp0ptuIUA5yfSMs3ojXtvIbGeCzeK_YFk1VHg7xtZzy5NJixJ2JxEtni9PjDhVMbCgXCRNWRZGLSKpfoY3PwP0cCcP21_wsBEatkk1p-OoINFBxMGnAAm_Bw3ZeypCHmtEgQQa8S-JPYrJDdREPfa_af4gZjB4njw818x2jB73TO7Rx5APn7HNAuUXjWu2q4_gYNKqi0COdQgfS4sfy_OiTXfujnk5sG_GItOiVf7XSTNG_GeOqh8-14bVMg4T0_IJBNc3EBdvEJTzNgflVNAVYl3oNvtmPfKogTZdMnutG2itT39PlR7h5GDxxCUxHzqlzKx9inpmH98hY9Ju6qzcEV7jsv6_G_QtLo5sNuy1iVxRTFAYRHrNdQw5q2cvkDbOrUavfhMs0D2yvu9Mf_nkhye-Y6fj6GBQeM1YDOkDbQl1U79TxAueZMKbkTTu0PIiZW0G0YBUU2UVKfjwbFiVDbZkDHeL-bPwb9iBDT-0MpC_gdNJ279AOzyRQWzdIdexbOo2sPeOfz2XefIDKOn3alkWU_zl-VIgFGMDqPgyJeE-6SiPxRS8rhv5oSrEubG7nK3itcF3sOcfMzvq_fUcDsWnsyft5q3V4RTOwlB_Rspya9InKMTOxXqyDrQfXv_bTqmWZXKbVEahMt_1N4Mw449p86giyEbibAYJXqyTN4A8KZqlU6Vk0HtnQ_Gy0" alt="uml diagram">
+<img src="http://www.plantuml.com/plantuml/svg/VLJBRjim4BppAnR98O2198xRan4RILCV2hH0OFUeovfQEqmfKkN3ZVwcn_exz6DTFImhjLL042XfPtPcbjI33-X2pBG8AcY2PRdtv7OOb3MGNaK3ENzNCcf53guFttaT3S4MNKh0LyRLyWK3OCnT-SUVGcritpcx8U-Ptf1Ep6U5MuTPLhFuSlypaf74ZPuVbz-_BE33pPtmFvHXAim0PR1k5GeMYh_8suo4j2Oug-7Y_hvTpkU9-MGjWxPF65Og178hrgmaNG1wQCi6a8yxL1hNIgjG_0y-4OqxbQC95OTM6m9PI4s3D4lAhLTieQYPAaGDc0Wo77zHqJIhGOeQsDHCX9ZDuCaQpY5h1nP1kd9l23bjvNDhr9gpciq49wTugdJY_dhUEO8fZ4Ryu6D6_UOhRSDeb9Z1LgxP5EKUS4SoCToo4tpRhPwT1K-QP8KtvVv4qqHqIbZLCPrQLynJBgraV5EUeFmDhpQw0ST7wbx6FKAcRpDaRcIYK6s_TRDf84N3mq76RWqbXbkS7SMnIJSFr04kq_5cBCUmYb9M9s7w_apjKAkqJGfyKoCEOjxP_aVmsP0EqnIaEPJBpOO-qXqiv0kJJ-4h7SCnL_IcF8lDTVIYt_6OnE9DKbwhr8ebSiQS0f_rwhIAb3otAZgpvpMdT9BAW8rUPGz_pboliaDp-rI81xxpl-il" alt="uml diagram">
+<h4 id="213-description-des-classes">2.1.3 Description des classes</h4>
+<img src="http://www.plantuml.com/plantuml/svg/dLRBRjim4BppAuXS-eBr0KLWf6boyA6Nk3arFT3asYPAaG8VHlL7xNVanxfIMKk8k98Rm0UQEpCx4cSbtOGeV4orOIpgQ80_FFyEu4yYQcUvUfCiRn2WPJ8QF5_zg-CwMU07uHLm_DM8baSHkKYDV_uLfbINyfvtUmW1vIsO9tkdnS6BkkvLf14XG62iN_2hw-kTIrO9twxNJ_RMkH_Q7ZwBkDKnWd_SN74H-7Hxe4jdetUcnDxYLMW9HObSA-fyEWbjn4uR7TkYs1nWK3HwZzVRIWCbSm_GkA2ZystHtr2c18icNgWkO1XOZ4JRQVzTbOmMxHMPZo6ZkqKHKVH3EsLiUlBy8_-WT6YCQBVo22ePUFkEm0Km8EETY93h938hddT9uEvbZeoBIwhR92NEmnBitdlNDMP4Ll-Z_OY1kGwfXl7zNIIj0bXrNoC3Ynkhz4ch9CpbdFDDP7EZqjdRQwkoQ8OQ-7hKuGkEun45NiE_W9OQXQaW3GuZycgFonANCGUdz2EYmmcbIY0iTTF8vNccPX33KPTGtHpn7C1I_LjLLT-96pgrGS7wBlqhQnw2QIC16nlXWAjQ_CHj4fODzyRE_meZMbLhylr1m6VV4DGGbVgC7jOaRQ7TN97qEjDtbBkIuwLGaosdcLgjUJuSUI5ebE1-S_MUKwS_IB8R31D-8Fq1" alt="uml diagram">
+<div style="page-break-after: always;"></div>
+<h3 id="22-gestion-dun-catsitter---donner-mes-disponibilit%C3%A9s-de-gardes-a-name%22analysedisponibilite%22a">2.2 Gestion d'un CatSitter - Donner mes disponibilités de gardes <a name="analyse_disponibilite"></a></h3>
+<h4 id="221-liste-des-objets-candidats">2.2.1 Liste des objets candidats</h4>
+<ul>
+<li><code>&lt;&lt;boundary&gt;&gt;</code> GiveCatCareAvailabilitiesUI</li>
+<li><code>&lt;&lt;control&gt;&gt;</code> AvailabilityCatSitterService</li>
+<li><code>&lt;&lt;entity&gt;&gt;</code> AvailabilityCatSitter</li>
+<li><code>&lt;&lt;life cycle&gt;&gt;</code> AvailabilityCatSitterRepository</li>
+</ul>
+<img src="http://www.plantuml.com/plantuml/svg/TP51JWCn34NtEOLL5gouGLKL5L5LweeHksuyYK66Z3EAFOFcI9o3Yv6aBMBJtK_qtxT_ibN3RDCGdJEsIB0dDKu2uNuIsA5rR4OP7k0fYHGna49W7PDmpv7jvxkS2Tun1zAJ75cDoeL2wZ_853nAu82cpkadouWP1q1lANUsb7duHPe6Sksg3ZmK_ynXmWYeC6cPUVUSSbbhdud4zMcIW7c1rNfzrPlDIVOyKy5tcEbnHexOrcFIryEg9bszpYUnd6BbBxBY_vZbhtP7UMPFZRzuNMbWx7b4iHeH-Ot0BpxIpPGN6fDogRUqe4eqm96KDsz5pkfcGkFE7kUs9A5ys2y0" alt="uml diagram">
+<h4 id="222-description-des-interactions-entre-objets">2.2.2 Description des interactions entre objets</h4>
+<img src="http://www.plantuml.com/plantuml/svg/vLVDRjiu4BxhAGRDmK2002dGKv1a6pXf4A27XOsz-J8HHovRYdJveuNVPe_rS-Z5TaZz9tAQ0YtGnLuCYXeEPxxvlXdvlVDeVIXLbddf5S4zEI-D1h486fRerz9xid06jqPhNfJaG4YtCre-IYLzVU1dWYrQGMwZRoLkBPObnKrN7xu6qZbbcViYzGxv3M3kZLtxFT-5VvCp9MLfArxse8Mif0Ye01q4n_UTV32MGxgtH3fxD44Bj7juStdPhQ-lD_fULiJ7bsZffaAfC8KcoVtry2Pwwcopt6XlZOhdssKyFZgpxrDUawraJkbyQvjn1bxcSeVQHnTA5WJvFbTqrCkATiP9Jc-V7CKJwK16cl5EYJIhenxIkSOcowwkuAOePFu9junmW9r2hQNUmjLLH55Mw2dXbYNmpgxxrE42JazZuHJkr_ad4a7HwIdVcTmHS3awPuEd7hVU2tliC8mE2wb5YbfsY3_eFwtPSibSzBwg3tdOrGUB3Qbco4EQFGRhXbixjBkB-CuUDxWOx0OmXzTissBLcxNFBU1ZPvcWfrOJJrqW8xFXx1YI1FO8u8y61Ta1tbIjA2YLNl1b6urSN7R0J58Bj5PMzO4QW5Xel7RZ_Fj2Z4BfediQoDYcFpTB1qUASd_BXYtp6agiqxQCUWU58A8ZLhEe3u_10_dn9XDWeqLZDodiTqYKue7PK1F9FviGsqxW4AP-8zFdizaUQmAf3ibXyiS5sZO9yRMfUJsXvElu_volg3oSYFFYF3-7TSZp-flZ5ETPpF6Y47raq40u2GrsB8keoxuL_2xKdoFcItA8O92x4MAcBkDkvbhG8XWBZBXaf1p1IL7GEteBTzoeSdRSZg8PSd0p4IOyAgFdWen7f_RCwS_rFwtaNYEkSLftrXhxB0aUaAxHErbBOLwEhFpZtDUQU_DiUcsufMHGaBk_hG-OP7jS5Jdo_5L7TR4EkvsLvSzHnhIvAECVt8eug8eIqpyoh1on9eobJlToJlN1e_HdKW6_YyQyzyUibYuQQ9fHKg6I30TWnPHeYNDqJ3sD1IuBP6BnoFqEGAyTIdo7fT9Kr6FAB6WctlFM65dodz3q3-gXaVaguV03IiU630rWsRpYrmIMDMC9-8EZ1PEJSY7AP61Lgu-UIDdhwGcNtWQwVZ71fT65jEKoCQRXz7I-4sZZ9UzqdpiHjtWaFVEWNE30u1BLbYFjeasRMIB-1x8b-M2fnMVYrA5sdLkcJw_wDjWL-JWsuXT5_SrIY-To54RRNlj0ZZMEvyc-wEMOzdvH0_eVwN7IoLW5ToM3sDLbygyfPdkdAoERwb0q11Q4MWJFkJg-WhdnDKXkcznqDtfekMfephzDBvYRaAEzzB6RHcdpyvv_-P_ilm00" alt="uml diagram">
+<div style="page-break-after: always;"></div>
+<h4 id="223-description-des-classes">2.2.3 Description des classes</h4>
+<img src="http://www.plantuml.com/plantuml/svg/dLN1JiCm3BtdAo8kWD3w0GXDJ1j2apWWffqOXopnYgNKGN5QgP_4T_1Zf1tRG2BfjbjQl_TiFwVkFGVbGrrP8G862_8HEA0ZQIvhabCL5XW2U3cICqSK3nMmDCWVZd2D5iFNPtm6MIflW5SqGrLwLLNGlTHMCGCBqH_anTtTsjLab6_7unKzOWCnmLHvc3GAhUhr47Wvlv2APIP-4DIEWdUsq_i5QlU5By0tgA4Np04EYXOtiV9MMqYAli27OmpEjsdT0qO0HMlRJdjxIkgcrOJ8k25lvKqt4glQXNu7KrkukXuYC5ZGOQR2BdeCgKo5XwbQaGPx9lcdkwcZ3Vfgsak1EIBfgOITZRNMm1DZpYnqot-1oZMdzZfYwy8ySZbUpBvaaRktNT8DqhPGt2dDwTcxqWDt-ORekQ4ESVDJ7M8hOuv0-Tx6OU28WSn35J6xUKVGd0msQ6fbaquUljHppVohaEdgBt3VsF_W27boL4eqoVWoNXAfzqiY1Uk-Sjal-Zma-fS4l1P5yPPVGqKnpk_ON319_hL81-992N4VEul_k6y0" alt="uml diagram">
+<div style="page-break-after: always;"></div>
+<h3 id="23-gestion-dun-compte---cr%C3%A9er-mon-compte-a-name%22analysecreateaccount%22a">2.3 Gestion d'un compte - Créer mon compte <a name="analyse_create_account"></a></h3>
+<h4 id="231-liste-des-objets-candidats">2.3.1 Liste des objets candidats</h4>
+<ul>
+<li><code>&lt;&lt;boundary&gt;&gt;</code> AddAccountUI</li>
+<li><code>&lt;&lt;control&gt;&gt;</code> UseService</li>
+<li><code>&lt;&lt;entity&gt;&gt;</code> User</li>
+<li><code>&lt;&lt;life cycle&gt;&gt;</code> UserRepository</li>
+</ul>
+<img src="http://www.plantuml.com/plantuml/svg/DP0nQWD134LxdK9iuoetCCOcHGYuYd7dHfvHGCciPXbf7FP8EOSlvjcnj_ly_xxuQ6zEnUkO05myCNwmkMJ5kAcA8O-JCxxXUxd_Sy4nhzv5Zs8jYcoOhp_iXe4qIYGt0FiLdQZGY1GybvFFxJBziUMHeLiu73VL9OcHSoq3ac4rBd3DLIEL6OVjTjMxtKKFCHv2Q8QVFpkzXX2oUibfARpamf_RiHENcmJk-2k2Diibo4JgIoF9DsEOG-ArzCLJDcaJvzvRW9u3Q_jGt_LKQw5ZJmjWpnhRDny0" alt="uml diagram">
+<h4 id="232-description-des-interactions-entre-objets">2.3.2 Description des interactions entre objets</h4>
+<img src="http://www.plantuml.com/plantuml/svg/jLPDQzmm4BtxLmp9OM4Xa49F8OIaILe2XKANz9IBAeyJ9RRiw6FR_JUzjTk_uJ_M9zcodUvkQ20zBCZIQDxCUq_IdbedZFDLcMLEkPBf0rkdQatvp6kITTKufWCwD-sQ3LLrchlH5qhS6b5LJ3cJRTUFdhNaBBCFIZS2AoIagyt2hP1LV6DRLvp5AThxEFDEbSeAnzxiaR3aBPliQ-rrBioAzewFq_Zav4QVvVcPb9XmrrSnEYrcijREr6NOq0z3_3MIBTWibUGOtYzbACifgHgXNTXHge99hcJ9QTDdRcghKE8gxWi1SJrZ3NPYNTqeROXXtLIMXHuEJeRYZcW-pvLjIh5wNvjgFaSZHQ7adRW5PvuAJFfIA1CPb61OTCnppt5WIot1KSVEy3LqF_05r1YIysRGjhAWa7Ufg2kDW1xPKbvh3QtjQy8jHQboH2N4Bztt2o6JrY6Z61mHQRsllOCz1yUEcPBqQJFo3Ah6J8NI-RlLPILK6LATtx6H-95LL2OX26U2ydPzt_wW1ZfPA3v2Z2uPCmEcTyKGrd_tJfhMCUKnUKcKZlRpm-9G7jB2Izd-iYZtl2j7WxYXZgUeKvAUj4R7XIWjdqoPc0QZQVbm8PomKQ5sRLIXkADXb8Wijc2VCImT57k-JXblZMmt-P0naZvwtoS5Nu_BRVpiOW6CveCNuY1PeEk5n98bsQxHQPATXuIEXbiWvbi0eJjruVp3FTEha1xz39223BS_VV0pXpqtcXq2bLugL08JscXi7JG0lGnTQRye-2s_eSiW97gvI8efFP5hIyKRwWzEsMnblD4kZQdDnfLMiRLnE6D0UWE5yXtrzHRfJnL_LtY8uEP_DRCp7XLEn1uTy69f_pxPssIT82KBFKlF_v7Qw1gpzH9WGsMVD2JE5PvVAWLLxMyWgOZO7IdW8FaK-SdrqTIOQTS1peId9vpqEBBJB3QKWZGDy76g68Kx9nvza0nTnhgoxUz1iC1a8JuSfvZ4Vuu_" alt="uml diagram">
+<div style="page-break-after: always;"></div>
+<h4 id="233-description-des-classes">2.3.3 Description des classes</h4>
+<img src="http://www.plantuml.com/plantuml/svg/VLDBJiCm4Dtx52CsW51p05HLBHHG9LPKNL4MhZqje_eJsPDAEHBdu68u0JT9gxAAvttcPsSQMGQkh162YGt22qOcxq1VLmwKjoKZZE0nV7zX0EipjdPpahiWhKNG2Ch8634AqHxWQZpU-Cff6Uh9PErcMi-KIW2l5bSW8_I1pgAyu-1DurX534iC1rBO6dfnfpUqJPLhPJ1Rth3qaTY7-kZg884kZLWtpjzJTXsrGlGRWtkuqnHB8-jd7-pDxHbBhgpu0dUGXhHal43_9NwoaimIdVv74e8FYHQz7JIqFCeJEUH6wXFLVYvPndCkfcfjsPopsr2JTajEFzHPSCwdijcOmbVlTa0wX-r7ILuISrhd2RfmcWwaAsaoarf4Q5_W04aT3kADztjokuoz5qNnSN9NHJ4PF9B-q9dhFOMJkR92J5Ffz3Fy0000" alt="uml diagram">
+<div style="page-break-after: always;"></div>
+<h2 id="3-regroupement-des-classes-a-name%22analyseregroupementclasses%22a">3. Regroupement des classes <a name="analyse_regroupement_classes"></a></h2>
+<h3 id="31-groupe-domaine">3.1 Groupe domaine</h3>
+<img src="http://www.plantuml.com/plantuml/svg/VPF1QiCm38RlVWhHuw1vW552kmr6ORUoKxk3EejCpB67evJsxUSaxffcTcxo_t-s_CjutGXwQMkZbB0OWbVlsXy2xMfaIqgH3Ve55glLK9NbmJuvzyssUaRPiGZv1M03Kp6vyxs9T5SaYSq9sU2HJLZVDqWwIatxmYEyELi1wvJLzONFlzqpnDPgFh5kqQIe5nI2VdPPbwpEUiT1J_dxeYW-b4gc7MNB-PE0EMnq_rca2v43jbQe2bMDvo1diHYelzZj_d6v4n_oWyMQ9fB1HiRoC3VsygL3TLNZuV_ck2mX4ZEFVGUDthiNbm-GItGxKgt3WCBl-GK0" alt="uml diagram">
+<div style="page-break-after: always;"></div>
+<h3 id="32-groupe-domaine-et-cycle-de-vie">3.2 Groupe domaine et cycle de vie</h3>
+<img src="http://www.plantuml.com/plantuml/svg/dLNBJiCm4BpxAwoUUAZv05HLfO1G9P0GXHDmSEDjkiAnAzk9oDzZ9wLDKpkDk2Kxuz7CxiQP6SkqBN91Y4KhW3vgLMo1SfKpb431qhHANPq3BH48IGKpXeuc4u5hQB3fz5E-6z2li5K6hTBLY393ZqknWtEblb5cTymkqTeJaJWS4xmj6GgsGe6sYgcUuH2GhXcLrswUGaQ3ze8dVIFs7GaoWdxYJWavxYszeTThb7nUFRYfYOlB0CuuTtLo9lbUgScrOmjusw1vLj9kdCO_9OQVh6bOqn3CGhvebMamPfX24tG0iTXoPWVQqf2hqdD9V25RNUwI7FIaP4QHXo0_B9hkXzl3M4YE9VA2YH3htiMXzVSSHK7oABPgwY7y8qcIhyZojBB5y4x06AtblvVYGyG82saXSqyv-t7bA6qNg3PsyBzxNLhjybF9SkYKt8rZs-McRwZjng_INtKdthCfIJ8zlJhEhA4_4xuDEX-x9zOtpSaWnmtWBFPisn6fjN1rSNn5OoqzI9APcv3xfVm2" alt="uml diagram">
+<h3 id="33-groupe-contr%C3%B4leur">3.3 Groupe contrôleur</h3>
+<img src="http://www.plantuml.com/plantuml/svg/dLHBJiCm4Dtx55PNHNmEWAggfI3K1H9IOSTcQW_Dg8vT-HE9Ut43BiOuL2A4f8cwI_m-ysOopY94y36LHeX8qQ1yz2uTK2fde__wD9Yy4Cf0278oczMdpipdR_OreD-WhqZXH4AGZVTE_frpUxAx5SGDnVXNsuDr-Ymh80DRCXG_EirE4OHen9ItyXAqNYhbaetJYnPshGfK-tk84FvZ0Qr-ABaGGw8dVlRVjY7ZSgKJ2curf1ARNGoAVkCmkBQQAj89p7ZD3vXxEJMz7E-ThAuvL7C8mze-UxVp6FAOXkGxgf3FL-2R7RBB2Aq2gz2Sgyx1ZzCuKWs-51IUUBMAC_LJtWwKzGswalKpptJOYfTkHC5qqEmuWkYnTDK8OlEBvqcYRczBxxhSp0UkrOAj-IVo3G00" alt="uml diagram">
+<div style="page-break-after: always;"></div>
+<h3 id="34-groupe-interface-utilisateur-et-syst%C3%A8me">3.4 Groupe interface utilisateur et système</h3>
+<img src="http://www.plantuml.com/plantuml/svg/dLJDJW8n4BxtAHfE6kCB649OKGbNDzwy3Es04xejwKmtuOry3r_CWeiYi2nmdUzdfZDVEcI1AAboIWc9GpsE8IrHanUCCp2eav0Z1i4KDOhc5SlNPuLA6GVCkjVlJqFo5k9gC7ZtZo4ioCz782L9jdYRz3ImFYmVbu-fnamQGSIY1d8mpSs5a1kV4_XnmyBQmfXSaCPXjw3KuLpwGTzPugM3LMa-q2Q7DxSjF4Q7HfxoRXgybTau_bPRYTEzQkc2TBcMoHXaxg8znnZMZTM99Hv_VOVWRmqDUevetWPtImruW-vAyVOImSyeLgED5Tepcbug-7USTUgk6_H7_ufLg2zzwptdy4oobZ7Mcv7LRlftcho4M6Lu7oM_JDA2rU38vfEtmDlCLNcg4hqzGTd6SfXf-IFw1W00" alt="uml diagram">
+<div style="page-break-after: always;"></div>
+<h1 id="conception-a-name%22conception%22a">Conception <a name="conception"></a></h1>
+<p>Lors des phases précédentes, nous avons mis en place le sujet et décrit l'ensemble du besoin ainsi que ses contraintes. Nous allons désormais nous atteler à la phase de réalisation, c'est-à-dire comment nous allons implémenter la solution ?</p>
+<p>Nous allons tout d'abord commencer par l'architecture en identifiant les contraintes techniques de l'applicatif, puis en modélisant les packages et dépendances de celle-ci. Puis nous terminerons par la manière d'effectuer le déploiement de notre solution.</p>
+<p>Par la suite, nous nous pencherons sur les technologies à mettre en place et pour ce faire nous décrirons à chaque étape les arguments en faveur de ce choix. Nous commencerons par les choix des langages et des <a name="Framework">frameworks</a> à utiliser. Ensuite, nous nous nous focaliserons sur le serveur qui va porter notre applicatif et le stockage des données. Après, nous nous intéresserons aux différentes couches applicatives : persistance, métier, service et présentation. Enfin nous, nous pencherons sur l'environnement de développement ainsi que les recettes à mettre en place.</p>
+<p>Pour terminer, nous reviendrons sur les cas d'utilsations réalisés dans la section analyse pour venir enrichir les modèles existants afin de présenter ce qui sera réellement implémentés dans notre applicatif.</p>
+<h2 id="2-architecture-a-name%22conceptionarchitecture%22a">2. Architecture <a name="conception_architecture"></a></h2>
+<h3 id="21-contraintes-techniques">2.1 Contraintes techniques</h3>
+<p>Les contraintes primordiales lié à un site web sont la création d'un nom de domaine et son hébergement. En effet, il faut que le nom de domaine soit libre, mais également être vigilant à l'extension qui pourrait amener à un <a name="Cybersquattage">cybersquattage</a>.</p>
+<p>Ensuite nous avons des obligations liés à une navigation web, c'est-à-dire que le site doit être fluide et rapide. Notre application devra être user-friendly et accessible pour toucher un maximum d'utilisateurs de tout âge et dans des situations différentes. En effet, il ne s'agit pas d'un intranet qui aurait eu des contraintes différentes.
+Par ailleurs, de par sa visibilité publique une sécurisation minimales doit être mise en place.</p>
+<p>Enfin il y a les contraintes inhérentes à une bonne conception et implémentation ainsi qu'à l'utilisation de technologies répandues, fiables et éprouvées <!--synonyme à trouver copier coller--> afin de maintenir l'application. Pour ce faire, nous allons mettre en place une architecture héxagonale.</p>
+<div style="page-break-after: always;"></div>
+<h3 id="22-packages-et-d%C3%A9pendances">2.2 Packages et dépendances</h3>
+<img title="Packages et dépendances front-end" alt="Packages et dépendances front-end" src="img/packages_front-end.png">
+<ul>
+<li>🗎 package.json : Contient les dépendances front</li>
+<li>🗎 index.js : Point d'entrée (<a name="SPA">SPA</a>)</li>
+<li>🗎 style.css : Feuille de style</li>
+<li>🗀 components : Contient les composants</li>
+<li>🗀 container : Contient la logique métier</li>
+<li>🗀 hooks : Contient les appels au back-end</li>
+<li>🗀 routes : Contient les chemins (<a name="URL">URL</a>) permettant la navigation</li>
+<li>🗀 mocks : Contient les bouchons</li>
+</ul>
+<p>⚠ Il s'agit d'une liste non exhaustive et qui pourra être amenée à changer en fonction de l'implémentation.</p>
+<div style="page-break-after: always;"></div>
+<img title="Packages et dépendances back-end" alt="Packages et dépendances back-end" src="img/packages_back-end.png">
+<ul>
+<li>🗎 application.properties : Contient les propriétés fonctionnant avec spring boot</li>
+<li>🗎 db.changelog-master.json : Contient la migration et le versionnage de la base de donnée</li>
+<li>🗎 build.gradle : Contient les dépendances back</li>
+<li>🗀 availability / booking / user (Domain Layer) : Contient la logique métier</li>
+<li>🗀 api (Application Layer) : Permet la communication avec le front-end</li>
+<li>🗀 routes : Contient les chemins (<a name="URL">URL</a>) permettant la navigation</li>
+<li>🗀 test.com.feline.temple : Contient les tests unitaires et d'intégrations</li>
+</ul>
+<p>⚠ Il s'agit d'une liste non exhaustive et qui pourra être amenée à changer en fonction de l'implémentation.</p>
+<div style="page-break-after: always;"></div>
+<h3 id="23-d%C3%A9ploiement">2.3 Déploiement</h3>
+<p>Le déploiement se fera dans un premier temps sur un pc en local de la manière suivante :</p>
+<img src="http://www.plantuml.com/plantuml/svg/LO_DQiD038Jl-nJ2bnw23xs6O5mAfOHGNEmNKBp2NRf_xCfkWicxHpPfSKy3qkYRKPqP4u_EAXyqGT6yWeXz6jbOav5fJ0LWXjZ3hFAtyH4JEkY3Yy6JvvQlba3kdzNV38eFdCpmE3uSw4Bzo7YsL5NgzWXgAKsoXowu7ddD49st52ONBRsHDPeM3iPeZPXCy0BIA4ZCI-UGUKYKsy_JOljTh67IkzJXnvSLR76mXzrxrpNgtx1CPlXYiMw8OZmsBwech-NBEm00" alt="uml diagram">
+<h4 id="231-le-nom-de-domaine-et-son-h%C3%A9bergement">2.3.1 Le nom de domaine et son hébergement</h4>
+<p>Si les délais le permettent, l'application pourra être déployé dans le cloud avec kubernetes ou un autre provider qu'il faudra sélectionner. Il sera également possible d'acheter le nom de domaine suivant : www.templefelide.fr.</p>
+<div style="page-break-after: always;"></div>
+<h2 id="3-choix-technologiques-a-name%22conceptiontechnologies%22a">3. Choix technologiques <a name="conception_technologies"></a></h2>
+<p>D'un point de vue global, le choix se portera généralement sur des langages open source de part la gratuité de ceux-ci. En effet, on pourrait choisir des langages libres, cependant cela pourrait amener des coûts supplémentaires. La différence entre open-source et libre ne sera pas expliqué ici. J'invite le lecteur à voir la bibliographie. De plus, il faut choisir des langages et bibliothèques robustes, maintenues et portés par une communauté afin d'avoir une maintenance acceptable. Enfin, il faut prendre en considération la rapidité d'apprentissage du langage ou de la bibliothèque.</p>
+<p>Nous allons partir sur une architecture et un choix de langage fréquent dans les applications web de nos jours.</p>
+<h3 id="31-front-end">3.1 Front-End</h3>
+<p>Concernant la partie visuel de notre applicatif, nous faisons le choix de ReactJS et Ant Design.</p>
+<p>React JS est un langage performant de part sa virtualisation du DOM en mémoire et sa manière de calculer intelliger pour gérer les mises à jours et changements du DOM. Toute cette gestion du DOM se fait discrétement ce qui permet un rendu rapide, intelligent voir invisible pour l'utilisateur. De plus il s'agit d'un langage mature, qui existe depuis maintenant 10 ans et qui est maintenu avec des versions récurrentes (même si la dernière version commence à dater de juin 2022). Par ailleurs c'est un langage simple à comprendre, flexible qui permet une bonne réutilisation des composants. Enfin, il est rattaché à un ensemble vaste d'outils qui permettent d'inspecter et maintenir le code.</p>
+<p>L'utilisation de la bibliothéque Ant Design va permettre d'avoir un ensemble de composant de haute qualité, afin de faire rapidement un site esthétique et bien construit.</p>
+<h3 id="32-back-end">3.2 Back-End</h3>
+<p>Nous allons désormais choisir le langage ainsi que le <a name="Framework">framework</a> lié au back-end de notre applicatif. Nous avons décidés de mettre en place Kotlin avec les bibliothèques de spring, qui est un des acteurs les plus reconnus dans ce domaine.</p>
+<p>Le choix de Kotlin est porté par les éléments suivants : c'est un langage multi-paradigme, c'est-à-dire à capacité fonctionnelle et orentiée objet. D'une part il à un typage statique qui fonctionne à la compilation. D'autre part, il est concis, explicite et permet donc une meilleure lisibilité, on gagne donc en qualité plutôt qu'en quantité de code. De plus, c'est un langage qui évite la nullité comme dans Java qui entraîne souvent des erreurs de type NullPointerException lors de l'éxécution. Enfin c'est un langage facile à apprendre et toujours interopérable avec Java si besoin.</p>
+<p>Concernant le <a name="Framework">framework</a> spring, nous allons passer par spring initializr pour démarrer notre projet. Nous allons ajouter comme dépendance spring boot qui permet de créer rapidement une application ainsi que spring MVC qui permet de gérer comme son acronyme l'indique le modèle, la vue et le contrôleur. Puis nous ajouterons également spring-security pour avoir une sécurité minimale ainsi qu'une gestion de l'authentification et autorisation. Enfin nous utiliserons spring Data <a name="JPA">JPA</a> pour la persistance des données.</p>
+<h3 id="33-gestionnaire-de-d%C3%A9pendances">3.3 Gestionnaire de dépendances</h3>
+<p>Les gestionnaires de dépendances les plus couramment utilisés sur le marché sont maven et gradle. Ils ont chacuns leurs avantages et inconvénients, cependant le choix va se porter sur gradle qui est plus flexible et rapide que maven.</p>
+<h3 id="34-serveur-web">3.4 Serveur web</h3>
+<p>Le choix du serveur web se porte tout naturellement sur Tomcat. En effet, il est embarqué et recommandé avec spring boot et spring MVC.</p>
+<h3 id="35-stockage-des-donn%C3%A9es">3.5 Stockage des données</h3>
+<p>Au vu de l'application et de son modèle de donnée, il paraît assez évident qu'il faut utiliser un système de gestion de base de donnée relationnelle (SGBDR) afin de mettre des relations rigoureuses entre nos objets. Le choix du SGBD va se porter sur PostgreSQL, qui permet malgré tout de gérer du NOSQL s'il y avait un besoin futur. Cette décision répond aux critères principaux d'open source et d'avoir une communauté importante. Cependant, il faudra être vigilant sur la manière d'indexer les données et les slow query, car PostgreSQL n'est pas le système le plus rapide.</p>
+<p>Par ailleurs, nous allons utiliser liquibase qui est un migrateur de base de donnée open-source. Il va nous permettre de versionner notre base de donnée.</p>
+<h3 id="36-couche-de-persistance-et-m%C3%A9tier">3.6 Couche de persistance et métier</h3>
+<p>Au vu des technologies selectionnés sur le back-end et la base de données : Kotlin, Spring et PostgresSQL ; il paraît naturel de porter notre choix sur l'api <a name="JPA">JPA</a> pour la persistence des données ainsi qu'Hibernate pour l'implémentation de celle-ci. Pour les entités, cela sera fait au travers de l'annotation @Entity comme défini par <a name="JPA">JPA</a>.</p>
+<h3 id="37-couche-service-et-composant">3.7 Couche service et composant</h3>
+<p>Les couches services et composant utiliseront les annotations @Service et @Component proposé par le <a name="Framework">framework</a> spring.</p>
+<h3 id="38-couche-pr%C3%A9sentation">3.8 Couche présentation</h3>
+<p>Au niveau de la communication entre le front-end et le back-end nous appliquerons l'architecture REST.
+La couche présentation se fera au travers de l'API Fetch intégré par défaut à ReactJS pour le front-end. Concernant la partie back-end nous utiliserons les annotations @Controller et @RequestMapping.</p>
+<h3 id="39-environnement-de-d%C3%A9veloppement">3.9 Environnement de développement</h3>
+<p>Aucune contrainte ne se fera sur ce sujet. Les développeurs doivent être libre d'utiliser l'environnement qu'ils veulent.</p>
+<h3 id="310-recette-de-lapplication">3.10 Recette de l'application</h3>
+<p>Il est important de se soucier de tester l'application pour éviter de potentiels erreurs. La recette pourrait se faire au travers d'une intégration continue, mais cela nécessite beaucoup de moyens et un coût non négligeable. Nous passerons donc par des tests unitaires et intégrations lancés manuellement par les développeurs, puis par des tests manuels.</p>
+<h4 id="3101-tests-unitaires-et-int%C3%A9grations">3.10.1 Tests unitaires et intégrations</h4>
+<p>Les tests unitaires et intégrations seront réalisés avec Junit 5, MockK et Wiremock pour le back-end. Quant au front-end on utilisera Jest et MSW.</p>
+<h4 id="3102-test-end-to-end">3.10.2 Test end to end</h4>
+<p>Si les délais et les coûts nous avaient permis d'aller plus loin, nous aurions pu utiliser cypress, mais afin d'être raisonnable les tests de parcours complets seront réalisés manuellement.</p>
+<div style="page-break-after: always;"></div>
+<h2 id="4-cas-dutilisation-a-name%22conceptioncasutilisation%22a">4. Cas d’utilisation <a name="conception_cas_utilisation"></a></h2>
+<p>Les cas d'utilisation analysé dans la section précédente sont repris en appliquant les critères des technologies selectionnés.
+Pour rappel les cas d'utilisations suivants avaient été analysé :</p>
+<ul>
+<li>Réservation d'un particulier
+<ul>
+<li><a href="#conception_reservation">Réserver une garde de mon chat auprès d'un particulier ou d'un professionnel</a> ✅</li>
+<li>Consulter ma réservation ❌</li>
+<li>Annuler ma réservation ❌</li>
+</ul>
+</li>
+<li>Gestion d'un CatSitter
+<ul>
+<li><a href="#conception_disponibilite">Donner mes disponibilités de gardes</a> ✅</li>
+<li>Consulter mon planning de réservation ❌</li>
+</ul>
+</li>
+<li>Gestion d'un compte
+<ul>
+<li><a href="#conception_create_account">Créer mon compte</a> ✅</li>
+<li>Se connecter ❌</li>
+<li>Se déconnecter ❌</li>
+<li>Modifier mon profil ❌</li>
+</ul>
+</li>
+</ul>
+<p>Analysé oui : ✅ / Analysé non : ❌</p>
+<h3 id="41-r%C3%A9servation-dun-particulier---r%C3%A9server-une-garde-de-mon-chat-aupr%C3%A8s-dun-particulier-ou-dun-professionnel-a-name%22conceptionreservation%22a">4.1 Réservation d'un particulier - Réserver une garde de mon chat auprès d'un particulier ou d'un professionnel <a name="conception_reservation"></a></h3>
+<h4 id="411-liste-des-objets-candidats">4.1.1 Liste des objets candidats</h4>
+<ul>
+<li><code>&lt;&lt;control&gt;&gt;</code> BookingCatSitterUi</li>
+<li><code>&lt;&lt;boundary&gt;&gt;</code> BookingCatSitterRequest</li>
+<li><code>&lt;&lt;boundary&gt;&gt;</code> BookingCatSitterController</li>
+<li><code>&lt;&lt;control&gt;&gt;</code> BookingCatSitterService</li>
+<li><code>&lt;&lt;control&gt;&gt;</code> AvailabilityCatSitterService</li>
+<li><code>&lt;&lt;entity&gt;&gt;</code> BookingCatSitter</li>
+<li><code>&lt;&lt;entity&gt;&gt;</code> AvailabilityCatSitter</li>
+<li><code>&lt;&lt;life cycle&gt;&gt;</code> BookingCatSitterRepository</li>
+<li><code>&lt;&lt;life cycle&gt;&gt;</code> AvailabilityCatSitterRepository</li>
+</ul>
+<img src="http://www.plantuml.com/plantuml/svg/RP0nRW9134NxEOMr5Acu0KA4I4IHg43fQCoEGoQPzH3RG-16oJcuMBoRfKgaARxi_z-tPg66OhNB8LYoJB2vVYl92IqLXdXN6OvkI6tDYGIcjxthoWG7b4ZWhtDt-ue6M8zo_TA_qLB7cPGNKdKyKzxnEgdr18MoVoDJQ95ZYcWQWhudTWHsWAqLsTh53yHFqj9Hs9SpD2ifR5FYsC3aFgUMbhbI6DpmWFRag5EA5JEWGlN3OR8gGcgFGiIXzRIK3CriDihvVCVBKhpuuFbjCYDvJaqV7nr3fRTNZYYNFdhJ_sKtz56zRW3SVBy4Fzedvx1muV__0m00" alt="uml diagram">
+<img src="http://www.plantuml.com/plantuml/svg/XP6z3eCW54PtdeBOkOkpCLOxTAvh5yJRvgOK35wjl7t1dwGnscvVu3i7BcGj2KlTIx7A33pAXNmUGTSHFroC1dU6jz_eT2siur6IB3bDRpetvedwKGWgaGXiOJHPenJOY8kMBrKcf_M0pt6BBi7sA654vzeEUUe5Ab6XGdA_y9WrVZIKs0XDmQ7m3bmwgM1NSuN6j4Z6kj4KY17uureFiwTXeCaV5mHJsht8o4sTU9DQ7_a5-7xjdtzWBFF9_-q7" alt="uml diagram">
+<h4 id="412-description-des-interactions-entre-objets">4.1.2 Description des interactions entre objets</h4>
+<p>Pour gagner en lisibilité, les diagrammes ont été séparés en 4 étapes. Les trois premières sont ordonnancées par ordre chronologique. Pour la dernière étape, il s'agit d'une sous-partie de l'étape 3.</p>
+<img src="http://www.plantuml.com/plantuml/svg/fLNRJXin47ttLuoI1wIeI13r2G4YtDf885K9VSkBySucBewT-XB87v7-HdwiO-zciykIWbGfsdYzCsVcp1oFBvpdreUvOinBhn16cxL3k-HU6WtPGT2m80CfWf9euN3xdTP18qovpH3eDoThCUCUU5ZOpQjhkvfGxbcJetC4hr5DzBNaKyldyuJYDklV0RL02lHZC7eOti0nSqzI4n2V0nVUsB5VKPhy6PsP8tiqBz2vjKRxGzHP1xe39GLUge0iMSCLzqEToQNC0bV07GHA7xgtngBptooYPeAyhL7GEJqjb-Vd4trf30MUalzOUe_svx0JtKkB59AY1vrnkugks_LxlYCaMiudWArTdX0eQTfvANXSSl5KqlXkDAwkyVdJ8QwAl1JQHfGzv0PBBXL_b4hwLGKnfhvIyUeq-wneeLnmxIE6aZc2M0c5Us56k31EKkrN2Ibw98S-aIMD9IR5QYz4SYni-bM9pivWgAMNN4bNoZF0Gd6jgGvmTiPOREtXUQD59z3hPTAHsMeiPfW5XRtUH9EAHLXirhODH3AqjJF0jF489WcUDhyq1N273dwPO1r9tP5w7N2fdGHgDv1AuoUOR_wGkicN761gPJIBf6n4ZYgL50aJ-kwj4QN-0aImAQ7AfxdTUAjxGQn9BdLMIgZiWCA7cNJtP3phzTgWEo7kAjp_35HLx5SRQqBIel9gvE7bRQbTYtwVLP4eQar9bM5jRxUCnblrL9OxEQN_Du0PjWoRU5L6DSkQVxqw7_IXqSsQFkyCpz36WWtoND8mdM8nCLNwG7bDDAVJGMZag0wujNAvMSV1IUEMnYcjNKihILRrAbODhH6fo36kF7Ipe_n87C4u2157-GbSDzhc8dHCscX9lNRiFzZNg3PZqC5HyLgHUoWnL0wXc-Vu5O_XXiwsY711KC4gc7zbLgFVqlY7lRgnrgHMtQCLihow5EdSftkjk1nvy2HvCf_YHCThacAvz-BcxvxoHBFTf68an072s0KzwUx-2m00" alt="uml diagram">
+<img src="http://www.plantuml.com/plantuml/svg/dLRBJYD75DttLrp1mWaQ9B2oGWCQ69W4QHADSBBpfkY-RIfJNTMfXyV-coo7_8P_BAUg7-x6Da8Z8RjetzSvzznR_S5vONseL9PvwHNJm-RPiLqABuscOX8qrJ2GUL2IBPrsl-CSDDD2s889VnMiyoVXIOJQRhwxNLSJscVMbEmSmcjMStqhnSAAgafHtERvdy0wPoJwSltmv_qTJJFtLMe44XM9t1ixyskKARwnCnLdZsP5Hv-iqVwKTN54nzTAvdoZ0cV9cZuAVwyBkPH548g4eu3owVYJiUpyhvPPPpcyhL5qzFvzUxowckiROv1u0V-Pz9xjN_T7qRsrI2cHFUX2s7LqxSxxV1yOi9nF0JgxCaL0qNYoQd3SYFnh2-Ctetbzoz_UdE9ZKvTYEyfo0DprKaWb7gMIVjs7cA6l86y8SverBPIrq3x6KB9aojUvueDX7hWsJeBxTOeKFPB3562XiOIaEHqCaHmRcsbFKNPvIJDMdFkadQI_Meb5KauXF3lwwG_8q3mgkH3UICi_q-Lbr864dZbrFeiVfrUZDj85dPou5FaMTYsp9oTpFKotb08feyYhUfnthXLovqz6hhQbu607e-JcMaZj94481FrgKprQZ8s0oqHeMOcmeis_L0gKtOoLpRQbZrGtgXrOnehgVSQFCw4y7PSb_yBdT9S_SGxOdyMeI896O-7dzBS9bYg9kaALPQD8j8-zGZfGihwprjX870AFA4hiE8b_ZFJa9fjdBo1LSi62cD2bQZFl84oTWmuEeXZbY2WWryspbGmOO5Mr5aLeuh-Ew02W4LC91wzgR1lfkO9MQVEVH-lGm9X8Q1VRN0P_2CxRyKITS-WIk50Fa9q3wGysQ8Ido-6ubI2QKd3aRHBdJ6YzUURNWEoKq2-kcBwKkcZdgXrunR4Ct2Ovy7otSIWmGwX9Sno5tV79ZSNAhWs2Hh9JKr-Cl-l75QwxWx3TfLk6fdInCsNJhFyHXeFzrHiEdcsFqRZRMRtbTecbxnS12zun7CVhAnfO3lo7WCRZ_cP5V3O2goRsuhei9RPR93JUqohzWBemeDZ93Urg8goLIsW1h6F99QhPxHV6aCM-1mCWFRXc2egpyYm_erd8y_W2SK6t8qMu63eMRRI4UbmsGfzkzGiQO1Wvxn7FNB-Y7eJN1YMQzAA3sEzUyFi5ePUuOffztYcnndAneXtKMWL7iggDzKZAdUKINzWNBZ0kwpWxDcR252dCtijLS1toUETqEB9NEZuWTaVmRzyBlxFDPVigfZ2SpUNNlEo9qC02qhdkQDkNjznxJILDxBQ_kTEQ9V81dtWN_Hy0" alt="uml diagram">
+<img src="http://www.plantuml.com/plantuml/svg/dLPDRziu4BthLn39mRj1qqsnUmgQe4dgRWEqG62tDryOQfGGfKajFzput_HOt_iF_CVsaPBrOSjfOC209MeuCtppvWtVES-j3tELPLvwHMooNZco2-wbqImV1SrA64WHb2JBJZVVyHmqiGTkSsBupM4j7hbdF9Hs_TFjRZMXNhEc8EVWNfEQwVUIFrW-doSlRhtwBv0MX41tLvCljsFsT-Q-IGr7VCwuyCPE_H9fyk_ap9ooU_F4ZZvOe_qfwVo87LyfAUXQ1SgIDRlX_bRdSY7pm1NZZWMapuu_64lE_sk9T2Qmsnh5Zjw-hHylBsVwsXW4Vi3-gVIUxDVRexYzjaWX4JtedDjbtBfv7jex8HpB-UHWOrSa3qWQAq_LEQwv-5OVuwFHj7nFtrySugRAIv7jHNdXuQOeAN3hdZ2hYYTBhdtShMH1J2o5ek4JbiP90BvCFg9niiK1mQkKVVKqj3bjgJutW6GN5snAYeHFJ07RcB3hbIOU65-GI0iR1v5SU6yStbd3BYwoI049AbCgUfOgVthPA-4vEpbnAKoTr5GPVt8oqztOu5iJEmV_9LvQtpr6T5zYh5wrpzjDVHRqthPJP377NBfIyMLpmfZYLL58zDm3MYUqP_-hXu9hZe6KSzeJVplhlN2bNEwtoLD31WeMqgAJ5MUs9oEXNxkP1gB32JyFu3xyCguyEouA-eVUiB5u13tEsQTHy5991_DW6SheHZpunyYpGXAqoMKl1tvihKcWVoOhPDIgXGcfLpJm1L2bGH3R4SVcoCFe_ZwofLnQEB-fOW3867zIhqPS4SX5iCl40QgoUSANuP1ehUmt-EvarSZFSuMV75ZiFZjtQjjgNmjFb0K00ksVxuQBjJ9QtYFW7w9e9iZhDtz6DTXks8eq-Lbn9ixOD0WHnzPvVm0kk9Be-4fnN6NJI2goQdMkyTukDK_HijR122FFy-TGwyXMeubfRozUfvThgrwupHaxPktU-cDhnYePrFbupgMAoOtrmiXgO5DSg-aL-pibFDFh7_tPUgXNRM8_Yjeh5dhIKKKP4eeUEmwKqq-6vpjQ6hDJwGEGdMcEWF26ZMh4hPMBzIes6suuYRRaXfkjGv91FX-OSUGfRazRAQEue_LAMAwtwvI-zULuED-CbADT3UrCFZs2jZWGgLJ1PTq3jcHp-5ysxqCOT0YvCJiKbo5vtflmQzOeDswP2cXLmztEDEgDmM0xAbNV9whLfYztagc0spjLAy7jVAxiGNXY9Wq9lBzgeRcB8oINHR5UMLo2PJr6DaczggZP4z1u1vTY_Gj_9M7qUczv6axIeILbdE22S2bt9NGsvcDZz2nxXqTS-ly7" alt="uml diagram">
+<img src="http://www.plantuml.com/plantuml/svg/VLJRZjem47ttLupWOIKaMfRsQRMWlI6rKYkje8-y66TWtNN6gIyi-Pi-bk_8ZtLo0RA5L8eY9vvpvimPZ-zya2x4r8YWWq6O5tkFRYk3jWJ9LIJ8U5-hQ3Gw61xsUHq9OIDTWi1Foj7gHGQGCNF57tyEjR7vv-mQlMTwGhEa9oqtJgPfnUAB_Q-8f90JFT_FVtoTmQSFryA_Qc8gcO9KmRf5o5ceV4DlKnGhkuFUWrIlGwIa1_qlbZ1_mZUXB0Ld3VHkRvlbTBga1skPRVCemqA7W6x1nMY5FP0Uch0EvFrMQYDNskYG_my-5dNPEfCKIWwZrmWgLmOxQUQOMQ-vjhnYAX4LO2oGk2zvILElEYagO1rJeX9WOuIOJE3H4XkLDXsDe5on9vJS3kqpIth5PaucWgtLt7OySs4uFLO6Dp0Oy8UFARP5B8mDWy6IEbEv-jGKUv1RL4lYb4VX7u-hPsV1eq5LugdOdsaQYwCILdLogT8LiuH3IndVjKSeViDF6rr7nIVgbjSjGgPll6HkoKIXF9-h-l108ecR91cx8LmIfxZOabEIGr-4D07woMWzKYDOHANAKRbvFtHRQNJIE0M-ZX47CU_A_aVmHPCEtHHes9J-UesVyHfcweN9R-0RdioXAznfps8p4xrePpmvCTifp2gLHhD4zfXTuCkW76UHeETKUUiGNjASu9ah7MMq8bluIyMr8e_eSWQ4kECtNsv_0G00" alt="uml diagram">
+<h4 id="413-description-des-classes">4.1.3 Description des classes</h4>
+<img src="http://www.plantuml.com/plantuml/svg/dLPBRjim5Dph54Iow0_M0Oh0oCS1waKtSRDgkg39PvieHQhykDMDsdFaOdrMA4k9IL49u0NDDpDlH0qVT6aTDSvNiYYSS1B8tUC_2sPFdT2Ay7TUaHe1Wdafm91PLyUrLq2sr70W-AiGpNRK4Ufhy_ZNdbAr3tj6Ry1Qb5SW7zH2qAsXLTMgC4cj1LiKxOASNLmmhPpHSZv_KDTQ_nHgUqFTIZW7vdvvHgWbfzla_4eA1jVIGo-qrbvnQfgOqXtyyc1TL2xKNgrvysHSWedAzcLo_aKhQ1RmUz9Jh_3mqKXKDDGoYbTxAYHT2obS4vKT0yIqfTZWgskOXFZXrjeAfqsJED-kd9UE6dkXdy4Cce32n3U7Ba-hcFcevOp6lGsymoA3ZRfDFyT0hOZa_ZFvn8Mj9MrMR0VSItZ_8O6p886v1NKGwabaK3pk9e7hbscKskLKLvun70OvsAqn-j2uIDtEwUq73BmJrbSmFEb0AaQkw_HMpqclwDRTjUcj1enqdpHfPa7nsmePM5mgBlQ2UogdSuxHA4Q71zhR2CM3Q81A-BOJzYiUrWu5tiAVGFCrnwmd3Gu6n5izvYMcCNkd8wCISPJp60XBxTnXtSOOed_LCTHXEf0Gm5ZzUrcMFn87UceZ1Mkxj5yXun1CMnAmL0wskAhe7znEmeBXrjZnNsJmbEKyzHsGd2SnJZy0ncP3Z1cIcwEDfJvvTUDFrqKhJSkq6oiclOxq7QGzvZXtbP8jJvCycvCG2JOHDBWtxURi8qbbhfSiBZ72-ANz7m00" alt="uml diagram">
+<div style="page-break-after: always;"></div>
+<h3 id="42-gestion-dun-catsitter---donner-mes-disponibilit%C3%A9s-de-gardes-a-name%22conceptiondisponibilite%22a">4.2 Gestion d'un CatSitter - Donner mes disponibilités de gardes <a name="conception_disponibilite"></a></h3>
+<h4 id="421-liste-des-objets-candidats">4.2.1 Liste des objets candidats</h4>
+<ul>
+<li><code>&lt;&lt;control&gt;&gt;</code> GiveCatCareAvailabilitiesUI</li>
+<li><code>&lt;&lt;boundary&gt;&gt;</code> GiveCatCareAvailabilitiesRequest</li>
+<li><code>&lt;&lt;boundary&gt;&gt;</code> GiveCatCareAvailabilitiesController</li>
+<li><code>&lt;&lt;control&gt;&gt;</code> AvailabilityCatSitterService</li>
+<li><code>&lt;&lt;entity&gt;&gt;</code> AvailabilityCatSitter</li>
+<li><code>&lt;&lt;life cycle&gt;&gt;</code> AvailabilityCatSitterRepository</li>
+</ul>
+<img src="http://www.plantuml.com/plantuml/svg/VP0nRiCm34LtdO9mXawvGH0aJH4ZGAS6tRBG5b6mbQbKfDpaI3r7BrRQJTPkNmJv-AYD6XQhGmh6bWXQKkCi41-gm0xjo6PKO0bFMSJ3G0gHzPo5EqviFz_-9dZ34abFyingv0M5tBsJAVGeaIEQ1lrWEMF10R2tN8vszNNuHPe72bs-GBClMMn94XjOR1Ftz9WgXRbxKZauQUHOCG4gL7MRnJuN5suBaOJUfqjEqAnMjxXUdwJbaNnuXuMs8tB2MPj9Nm_DnBcrphjTeqh4SfqOz_mlv8K-gmlCfFl07yhFyCebR3puz_u2" alt="uml diagram">
+<img src="http://www.plantuml.com/plantuml/svg/TP113i8W44Ntd8BWsXiqfbeJNTkjcoaTaua83KnhkRr0syHDTp_CVoypr871y_WnedEpL1VGxoFQNid3tLcCL_ocmMXxy56ggjhowVIqDvgm0Mx0uta2Cj2H8IOCZRFidJ7ebOGWDqRevJrxrfWrVsnCkfQOqRVe9z9O-BKhXhGeQHh0SbOOUg7KKHlSjJnmS87O-LX4cIY0GCkfborBsZKKRkaag4-tpA9E8NtO3m00" alt="uml diagram">
+<h4 id="422-description-des-interactions-entre-objets">4.2.2 Description des interactions entre objets</h4>
+<img src="http://www.plantuml.com/plantuml/svg/xLZ9RXiv4BttLn3sGO010nvWJe7jYIClOo27WOMvwL9kbXGcR5BXqed-PexHT_IFJP7iDUgMurcCp78HMcnMiUhLgyUINbi7nlb2PfaJJYAxG-k4LepFl69pS0lX71fsogwrKlHGe6LSs8rMub58uQeTVKUs1iFHBjMrWBM1ei2mQAlTHuygnoop7uJQ0BrXa3jj5cvBPy4djBh0x55_PaUtHYjtYeeViUChAN9y8prcSNU8urvnKGhkGJAmp5iAvVXM6uhspY2gB2TheoKxEZ-l7oylb-fEb4Z6Sp1uLOAG46CMQ7-zFmf-wgtnR0h3Amvc6tmqpmUTF22bPrtqr1WaLvG6hNnEcRs1_4ETsCzQuVOQFpt_h7cALA8P73UHTyzssnPnWQOaNFk9PrGJ9tAn0UM22obMoF9jBd7IomDkj1LKbMrq52oY0ULC38e9fQT93z4kxMc1oYuksDLg9V9ti2RkUBQHe9HGQtPn4KWWId0Oovx5sfzU3ch7Nh6Jaq1B2Tj5_WwvbtXoGkT7byY8R8t3pjkW-0Dlv7rOpzPck3purhUAyQo4uX40qHJnNlrYz9f8QqDm3zKkzvjgPo1rt4XdeQ8elR7x0NGCwg3OIwrb1-rf2yLOjw-hNlUQzjR5QRUrnOeLxZlBE7wzQ-2f2QIthRFjf_04i0Th5HdHOy1R3HnDL_z8gQ1dChwWG9SAY8bq13cGCp16bDKEKmb8v-ZPzh5hGU-bqMGscGJXtDk-LxVnr4OidiZPeiJSNPD5tMo9-OkuB89eCmcC1uyaoRpQFNh7qFKNYQXBnTE-0G57yatHn7Pzhtsu6ZoTC3GBFJlTfkifYOi5YqwZJwhaEiLCnyTBvglkU95E_gET1zAnOtwsEilFsCBdUVN54Y56-p600fotwRDKYa7-R4Co46IiLT7lfOd7skJlQkm09DehpaU8qxyyR0ru07860TCCfKLsl5hXZ_W3kw4x8IV7zKmpmc0INgxzezHgBC5WEjnFVVM--gqMZsV9n8k8H8tVZJ7QxA558vrD4ed6e3UJNK-2cJfVARfVHt6hSIW4eGrqYvjg1r6J3cj23ZGboabLMFZDneZYtw0BFJOrZr75fNRtD50IG2L6ANXBDeIUGWXyZlaJljNEWN2dGZ9w5pRJsa-ZOlCgbIdD5YL8GQLXK1Blw-xurb3O-GgeUMYQUw9Eq-fciD0bjfKalgM1P__62NpyN-88_G3OCrGE4aSIijcusYsG6MfXWum6qnfrojxwqCaTsUeMRlcLVJjHdF5u-QS7fvTKHFfPjHAcc4TUfyORpep8b7Q2LfeXFHmSJE9t6fjcqBLP0N9Dk3NOnSL9DGrDUukcGESDraKSd6L1sUOqQePMFUiS7j25cI0ChzKNWtNHvxtewlklZU-G0E_ZSD3JzoEnBt1__1U4RT3Of18t1O7Oq67m_ql8zaQLMYHIODZ8I33ap3lArT8HHCkFNj1jGtVLKdKtbUpkj7-KIlmbeZob0xtr-Fz66hFYnslwz8Ny7G00" alt="uml diagram">
+<h4 id="423-description-des-classes">4.2.3 Description des classes</h4>
+<img src="http://www.plantuml.com/plantuml/svg/dLPBJiCm4Dtd55RPW10z048LfKLGYGLgnGfOkFQqZ3IrmNQ2SdlSb914r7QQNPHv7y_FoQrrtBXyHnd1nZ6dcS7jXsCI3GY7McM2kBLiT7EprhcIt9IJoPjwm09ctCsuWMd1aVWQ2Hs2VLcC6BSi4cTdKq81TvJ3YTfB-Ch1khZ1BsYuoqmhPpGHcBXHWsDdZrf1EOVlnaeSedkd5gtqIYjq3imAJE7FLrd40CUq2JV0H2a8Wl9B-DGMdJPbsA71j4n0EO_PknoUWWvXtPPQ5fk3QtOfqNuIBrVY0sHES7wH8bWWFvPpxkfe7z8s54vJ1LS2Q23vDpi_A1iqkrab1RA7wQc4keov462dKWuyw86_X9qk_kUQ9JVE2srG7Son3YxKiz5R0pPwZ9R4e6Qr-F6EPNtM-VGvwv87fT2L63Xt7P4hIzejV6silqggCSgYDqswVobwBF4KDvvnYisbx84orMYdWLSMbBpVUKozWnwqK18Bb3cdO2LRD-h0OdOL8bbrWN-97GTxo9DMMuOo67_nGy94_I88ssy4gtuPuX1Vlo3WTJmUlyS_3UD9yWEVlWnY8isYz5ecBnKRcVWyXSXD2vCj3abajxxG_kVj1m00" alt="uml diagram">
+<div style="page-break-after: always;"></div>
+<h3 id="43-gestion-dun-compte---cr%C3%A9er-mon-compte-a-name%22conceptioncreateaccount%22a">4.3 Gestion d'un compte - Créer mon compte <a name="conception_create_account"></a></h3>
+<h4 id="431-liste-des-objets-candidats">4.3.1 Liste des objets candidats</h4>
+<ul>
+<li><code>&lt;&lt;control&gt;&gt;</code> AddAccountUI</li>
+<li><code>&lt;&lt;boundary&gt;&gt;</code> AddAccountRequest</li>
+<li><code>&lt;&lt;boundary&gt;&gt;</code> AddAccountController</li>
+<li><code>&lt;&lt;control&gt;&gt;</code> UseService</li>
+<li><code>&lt;&lt;entity&gt;&gt;</code> User</li>
+<li><code>&lt;&lt;life cycle&gt;&gt;</code> UserRepository</li>
+</ul>
+<img src="http://www.plantuml.com/plantuml/svg/ZL91Ri8m4Bpx5Qlqm8aV84IWQgd42SIDYx6taekpJkrr8K_gE_gnRfoaAeTAlOrcPpOpwwmIwyYvyKgnOu_mZ8bT8B2pJ612qpB273RnwnCZD67YJhHpIKOM4uJp6t82eyawgpafbIwEMXrr0zfmY0VkPBE-OWeDgdEuGVKK0_4SoLRmK7jdSEqpggA6QZVBxBnBcZ772dI2d30g8vOOF5IBnGYNonFLrjR6X4nyV2dQtuHyB9FLiUjD4xvtxV4zI-TYdHGbdP9qmjo6m6jjBcFURI3i7l7wZ-MR8QV7UBV_Zof7QNd0-27dAF9nfEIKx8nhDN7lyEuLmNJ6usJQOnkIazjrnTSBobmgoAkMV0EQ34KsK3yrLmBaH_W6" alt="uml diagram">
+<h4 id="432-description-des-interactions-entre-objets">4.3.2 Description des interactions entre objets</h4>
+<img src="http://www.plantuml.com/plantuml/svg/jLRDJXin4BxlKup28L8a92hrX5049D0YLQf4H4zSNEyik7Zju9z0tgQtDdsDVR6ElN_U9a6qAeT4Nk_yV3FVv_6UMiUCywNCCYUSHFY0rWcj81zx1LoNIuTm23DJRT10gTkzMpKNxCwmiaJ84MorUVIeE6QPVH1goUWDCEwqMRWrHMLFQ7M9sLVz3ADBevKxH9MFuE1C2exdqcCMhM7qQUoTaC8oXzwCW5dm5at6oSLe2QEJasOvdTwgipm_urnxvMwkectpBcQWP5xbpAo3KxiUUbqZeROkkhOMHVGbTBJpN0C-P_oXmVjHArpFyUaLmMSr5ebc47zFAJTKvGBDYjgHLf9HAvtWOicK2nvI50XypIMsJjUur5PGxzRHBnZ4zrG2CHhnrQlM8PhLMrsPeVjYHJslknt-u70wQESnJ2Qvi4l9rfVQb9C9rLeKWj-pEvA0Xu8slMJ2H45m4WohXOIDPFeS0vRIXv0p0iXnjt54jWCOISwx5jQL8gCcjuLSAqNYjM-PViMaoCcwHV2bVlu721HyACJEPRWzU8B42m8UreamqlHDUqU4TWTwEsWlvxwwBRITSiccardCLmYLdwylIYPaI3YxHyFf1rQ0REa7EcYGLvjlrNTOaZeifjNrikqZKvf6ffrP9ziexHH7obbZbJ7fu20_Aexu4ImyvzLFIt1dDHn5v7GuXbdREhTAWvE2IOlJj1EfCHND7-RCCHjLK6sCA0JMRUXb03PmnhKno1sfucMSF8xUR7_pYUpOzFx4-PRd_zVBNVtPrmNgQDvf8IvQ2TIr05iX1riNcWRPgSOuYuwxsHFZBIX3VTB3r27rf9S6FFenfMHWiFhXW-en-DmgT6Ger4eG4XAXZS9MWGDgBnAlS50K-1xVmKKWacgPjum9bT2r0_4M-vrIjalfv-Y5CTfi3T8IhOtBCL9ARyAGteElaKXpgl1Pq6rEQdwjc9tnX30XkrV0NrFxvydUHUlsM7svFMz3jL6QTlMAadN8FYkYE1VqDG2IGLdzeamYPgoF5EMXu6dcmVXOQjgfDY6T2HTUEEbnPTCeDa2XC4lAJwSA2RXpxD6p-diZuihI9dNDWLsxzKMmzwgAgadUneijEwLj-jhx3G00" alt="uml diagram">
+<h4 id="433-description-des-classes">4.3.3 Description des classes</h4>
+<img src="http://www.plantuml.com/plantuml/svg/bLHVJy8m47_VfsZWHMFS1p240AAHn2S8J-f3QG-yK5fiRvXzU-jOMRiD4v-skz-VNd-NRUA8MoeEAXEAEyS6ev4mcgnHu_6xdaev5S8KcjQB0UEEnGqsd2eKC5C5DEADnoItPQfUmbS1ZbeMTVSVFe_dqHJObbK3iE6BqL3EuRltHci7TWNsv0-iBAAwJwbm2qoKGa4GB-5e79AnvKNVj28Bq8HK_dgStuB-eeguMHBh0xkJw8wAby_67cvkEoZgOq5Ni1DNA3d15RWsVZfmL2lGyW-AjSPwEElkovFufPbIeZrqM77KRJ35xiKdYFsS4tTTpFcng_c3PnI_jzsYbhCo4BguFpO8VVbgz8wX36Nr49nMI0IstLreYIUK1LS1yIC2gxwWfECdJEgDCNlKkz1xo_FyexNqVDpzC7gYJsXDsFqRyEGekoJ76cgYQITL4xA9lul_E_m0" alt="uml diagram">
+<div style="page-break-after: always;"></div>
+<h2 id="4-regroupement-des-classes-a-name%22conceptionregroupementclasses%22a">4. Regroupement des classes <a name="conception_regroupement_classes"></a></h2>
+<h3 id="41-groupe-domaine">4.1 Groupe domaine</h3>
+<img src="http://www.plantuml.com/plantuml/svg/XLF1JiCm3BtdAwpjXhH-09gg0PDWqcuJ9-3W4Qj4InsKkeFzFLdRgLsNb9lztelpdgEiAa4lTMcL4YEMuDcx-fj0kn8DarB40J_1RBbigpn_vqVd3eQB9vIT4I4_0wnW3CBynJ6TrlGJdV5QTUVEnJ_QXoCQYtjZGtzzQPGPJ5CthkvXwxW0esDKu-Np0amfDgpDqUWQRKorHY5eDfjaYNMIsxTuZ7_Bikn3gNZkFbkA7mLCoGR-9oNd42d1XeMAK9Nu6-2ah0lK6ElzT-rEVCWFZ2MD88kL3E5sRyRBbmxL1Us6t-nnaKEdc7ZiAz7WlHjmSGUfHFr8jGeB2d_h3m00" alt="uml diagram">
+<h3 id="42-groupe-domaine-et-cycle-de-vie">4.2 Groupe domaine et cycle de vie</h3>
+<img src="http://www.plantuml.com/plantuml/svg/dLLTJuCm57tdLpJwuaV63rYMPSuPNQA9SVgaFdJqZjrOsgKjAF_U5ZR7W0Bn3SuvFRtdzb9csb1bqeG7WK73WTmhcUw0C9bG5430a2YFBCw0P0X1476gDJcRJ3XkeEIcqm_nfa6zm4vgD5BbPuHgSWgHymSf85_0jyzYBkKNYlYMcXKQqx3pq_tMDnb5JjV8qUG-_nvDPHCGjbMvswLyQYk-jUGU3zUmlyxrQ5khzUUek0MrSncJwmqADi_lx8dpYyiMdZ9cyQ2lGmUdClLUpU5rY_f92hEr7l-q6Bwoa64XGz1ByQnah43hOGvbq072TCUe6LYMWaHcJXjqZF2nousX6PD7AMA2h8qgHYKw05sAfM2O8KifRrCjR1nIt0LU5WJpSkiIR-FVmp3yz0nF9PkFhmNqoIhrTqfS29zWAGp4zYcXFnRsolQ1YiAEzUzVLqRP_4JG16gGlPbC5IxxXifitIWTqBrvnwI4uRHniVIDeLlJAgb_x4xeeEP1Zah2bjWnRIUYoi0LuEYA-5fwj0nczeJix-WN" alt="uml diagram">
+<div style="page-break-after: always;"></div>
+<h3 id="43-groupe-contr%C3%B4leur">4.3 Groupe contrôleur</h3>
+<img src="http://www.plantuml.com/plantuml/svg/dLHBJiCm4Dtx55RP5F4v0AgY_X1qWOHKsB5nxI4PrR4hVu9wBsx0nPY4IfZG9b5tYTzdvat6cVeWN8YbPYnWqC0Vd8qxuDAQuBu-DKJ7cDJ2UpwQJ9fJgxFipRnwS6jm5KeOSU5vyiul7gs1_H8-ZYhdrcxHv0iHrXZ2NvSJM8_Zh1AenGOrXlrHsov2uitI47VyIYWraz964yQNBUn65Y2tIn64_uzvCEg-f984iLEHo7_JXhIjAtKeABIF9QHvUaM_xH2uCWehL57euPeViCxIEKTgxnsDQZZOS13yoZmxcplmzPZwv3bMGESBuTA4v390AuMHeCzLruqVfd6WQdWfq3_HaXLdwiUq7S2R-tNDcsUQQRyLBTs0Wd6do740qK5fgm74z8lNamJLtfQJwtARTLumngPaJR-ORm00" alt="uml diagram">
+<h3 id="44-groupe-interface-utilisateur-et-syst%C3%A8me">4.4 Groupe interface utilisateur et système</h3>
+<img src="http://www.plantuml.com/plantuml/svg/dLLBRi8m4Dtd55QxQLNr0XL21DgYx2eYTjqOUw1M7PlQuqYvKU_HYzL00k7ZEB2TzvbdpyGPMQG6NI4J52Y1J8rsQo128PWbPK0S2YaiHN26019RMVpxBI1XabfBxWQ3XNQAKrCDXvzgAagOK9nG0sb9XQGBBqO1TWO_3YpU4Mf9Z4JkKoaOZAKBT1bh_ItKodla0dtEjda0YtgcdAUC-GAstSwgRPz-uURPnLppB1efU4-rPGT-nN5hitRXw90NWh-G9oxiMj8gPr_0dOI7nm3FWWI6htvzQZp8h1ttrI1nSLBDfSQOQ-uO0sjZj3TZzAPn4jgY_krR2gQLTKLxHbKjIhf6UF6M8uB3TTTe7z4g1CUbZ2e6yaPnCt6jbi8KawqLy1vDhnKSBS5cqMyBkjFFeD3bjMTzjdxWcTTQCEKsSX9z1NtZfL2xiA81C_LXzChiThcFnKt3RIzlvuIJesVZS5NlsXGUFaM5MZiCO2MLWll53S3D5rhu13aeta5fFkBpnzkJwBwueOoya__t_GC0" alt="uml diagram">
+<div style="page-break-after: always;"></div>
+<h1 id="bibliographies-a-name%22bibliographie%22a">Bibliographies <a name="bibliographie"></a></h1>
+<p><a href="https://www.interviewbit.com/blog/gradle-vs-maven/#:~:text=Answer%3A%20Gradle%20is%20faster%20than,can%20resolve%20Gradle's%20build%20cache.">Advantages and Disadvantages of Gradle and Maven</a> : https://www.interviewbit.com/blog/gradle-vs-maven/</p>
+<p><a href="https://ant.design/">Ant Design</a> : https://ant.design/</p>
+<p><a href="https://www.cypress.io/">Cypress</a> : https://www.cypress.io/</p>
+<p><a href="https://gradle.org/">Gradle</a> : https://gradle.org/</p>
+<p><a href="https://www.liquibase.org/">Liquibase</a> : https://www.liquibase.org/</p>
+<p><a href="https://mockk.io/">MockK</a> : https://mockk.io/</p>
+<p><a href="https://mswjs.io/">MSW</a> : https://mswjs.io/</p>
+<p><a href="https://react.dev/">React JS</a> : https://react.dev/</p>
+<p><a href="https://testing-library.com/docs/react-testing-library/intro/">React Testing Library</a> : https://testing-library.com/docs/react-testing-library/intro/</p>
+<p><a href="https://start.spring.io/;">Spring initializr</a> : https://start.spring.io/;</p>
+<p><a href="https://vitejs.dev/guide/">Vite</a> : https://vitejs.dev/guide/</p>
+<p><a href="https://wiremock.org/">Wiremock</a> : https://wiremock.org/</p>
+
+</body>
+</html>
